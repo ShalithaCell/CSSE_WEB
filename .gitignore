@@ -273,3 +273,5 @@ typings
 .node_repl_history
 
 *.appsettings.json
+
+.env
