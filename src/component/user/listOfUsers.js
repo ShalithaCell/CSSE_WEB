@@ -56,7 +56,7 @@ class ListOfUsers extends Component
 
 	componentDidMount()
 	{
-		this.props.updateUserList(this.props.user.roleID);
+		// this.props.updateUserList(this.props.user.roleID);
 	}
 
 	onClickListner = async (e) =>
@@ -159,7 +159,7 @@ class ListOfUsers extends Component
 										{ title: 'Role', field: 'roleName' },
 										{ title: 'Email Confirmed', field: 'locked' }
 									] }
-									data={ this.props.userList  }
+									// data={ this.props.userList  }
 									actions={ [
 										(rowData) => ({
 											icon     : 'edit',
