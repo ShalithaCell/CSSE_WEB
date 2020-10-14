@@ -14,8 +14,6 @@ import { AddCircle } from '@material-ui/icons';
 import Dialog from '@material-ui/core/Dialog/Dialog';
 import DialogContent from '@material-ui/core/DialogContent/DialogContent';
 import RegisterRole from './registerRole';
-import useMediaQuery from '@material-ui/core/useMediaQuery/useMediaQuery';
-import useTheme from '@material-ui/core/styles/useTheme';
 import CloseIcon from '@material-ui/icons/Close';
 import DialogTitle from '@material-ui/core/DialogTitle/DialogTitle';
 import IconButton from '@material-ui/core/IconButton/IconButton';
