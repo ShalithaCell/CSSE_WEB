@@ -313,6 +313,19 @@ input.gn-search:focus {
     -webkit-font-smoothing: antialiased;
 }
 
+.fa-address-card-o:before {
+	display: inline-block;
+	width: 60px;
+	text-align: center;
+	text-transform: none;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	line-height: 1;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+}
+
 .fa-university:before {
 	display: inline-block;
 	width: 60px;
@@ -325,6 +338,7 @@ input.gn-search:focus {
 	speak: none;
 	-webkit-font-smoothing: antialiased;
 }
+
 .fa-slideshare:before {
 	display: inline-block;
 	width: 60px;

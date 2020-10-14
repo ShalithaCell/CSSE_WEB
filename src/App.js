@@ -17,6 +17,8 @@ import listOfUsers from './component/user/listOfUsers';
 import { ToastContainer } from 'react-toastify';
 import ConfirmationDialogs from './component/dialogs/confirmationDialogs';
 import UserProfile from './component/user/userProfile';
+import ListOfSuppliers from './component/supplier/listOfSuppliers';
+import ListOfOrganizations from './component/organizations/listOfOrganizations';
 
 class App extends Component {
 
@@ -40,6 +42,8 @@ class App extends Component {
                     <Route exact path='/users' component={ listOfUsers } />
                     <Route exact path='/confirm' component={ ConfirmationDialogs } />
                     <Route exact path='/userProfile' component={ UserProfile } />
+                    <Route exact path='/suppliers' component={ ListOfSuppliers } />
+                    <Route exact path='/organizations' component={ ListOfOrganizations } />
                 </Switch>
 						:
                 <Switch>
