@@ -19,12 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e673d3c-e34d-4d15-aa18-c71353398034" name="Default Changelist" comment="configure react redux with thunk">
-      <change afterPath="$PROJECT_DIR$/src/assets/css/style-custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/examples/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/examples/Login.js" afterDir="false" />
-    </list>
+    <list default="true" id="9e673d3c-e34d-4d15-aa18-c71353398034" name="Default Changelist" comment="impl firebase" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +88,7 @@
       <workItem from="1602582133763" duration="5221000" />
       <workItem from="1602644693913" duration="20531000" />
       <workItem from="1602732731764" duration="765000" />
-      <workItem from="1602734030298" duration="16612000" />
+      <workItem from="1602734030298" duration="17087000" />
     </task>
     <task id="LOCAL-00001" summary="add git ignore">
       <created>1602651816258</created>
@@ -151,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602763377327</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="impl firebase">
+      <created>1602767115501</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1602767115501</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,7 +180,8 @@
     <MESSAGE value="add organization and supplier design" />
     <MESSAGE value="add necessary packages" />
     <MESSAGE value="configure react redux with thunk" />
-    <option name="LAST_COMMIT_MESSAGE" value="configure react redux with thunk" />
+    <MESSAGE value="impl firebase" />
+    <option name="LAST_COMMIT_MESSAGE" value="impl firebase" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602582719997">
@@ -217,11 +220,11 @@
     </state>
     <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602692737475" />
     <state width="1899" height="282" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602763547242" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1602763378688">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1602767326152">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602692727518" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602763378688" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602767326152" />
     <state x="563" y="131" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602751068691">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
