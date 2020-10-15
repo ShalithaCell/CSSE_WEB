@@ -16,6 +16,9 @@ import {
     Col,
 } from "reactstrap";
 
+import githubImg from '../../assets/img/icons/common/github.svg';
+import googleImg from '../../assets/img/icons/common/google.svg';
+
 class Login extends React.Component
 {
     constructor()
@@ -43,7 +46,7 @@ class Login extends React.Component
                                     <span className='btn-inner--icon'>
                                         <img
                                             alt='...'
-                                            src={import("assets/img/icons/common/github.svg")}
+                                            src={githubImg}
                                         />
                                     </span>
                                     <span className='btn-inner--text'>Github</span>
@@ -56,7 +59,7 @@ class Login extends React.Component
                                     <span className='btn-inner--icon'>
                                         <img
                                             alt='...'
-                                            src={import("assets/img/icons/common/google.svg")}
+                                            src={googleImg}
                                         />
                                     </span>
                                     <span className='btn-inner--text'>Google</span>
