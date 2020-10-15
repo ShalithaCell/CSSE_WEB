@@ -4,6 +4,7 @@ import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import Admin from "./layouts/Admin";
 import Auth from "./layouts/Auth";
+import './assets/css/style-custom.css';
 
 class App extends Component
 {

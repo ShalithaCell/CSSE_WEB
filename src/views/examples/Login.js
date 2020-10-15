@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from "react";
 
 // reactstrap components
@@ -7,7 +8,7 @@ import {
     CardHeader,
     CardBody,
     FormGroup,
-    Form,
+    Form as FormR,
     Input,
     InputGroupAddon,
     InputGroupText,
@@ -16,17 +17,16 @@ import {
     Col,
 } from "reactstrap";
 
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+
+import { connect } from "react-redux";
 import githubImg from '../../assets/img/icons/common/github.svg';
 import googleImg from '../../assets/img/icons/common/google.svg';
 
+// eslint-disable-next-line react/prefer-stateless-function
 class Login extends React.Component
 {
-    constructor()
-    {
-        super();
-        this.state = {};
-    }
-
     render()
     {
         return (
@@ -70,47 +70,84 @@ class Login extends React.Component
                             <div className='text-center text-muted mb-4'>
                                 <small>Or sign in with credentials</small>
                             </div>
-                            <Form role='form'>
-                                <FormGroup className='mb-3'>
-                                    <InputGroup className='input-group-alternative'>
-                                        <InputGroupAddon addonType='prepend'>
-                                            <InputGroupText>
-                                                <i className='ni ni-email-83' />
-                                            </InputGroupText>
-                                        </InputGroupAddon>
-                                        <Input placeholder='Email' type='email' autoComplete='new-email' />
-                                    </InputGroup>
-                                </FormGroup>
-                                <FormGroup>
-                                    <InputGroup className='input-group-alternative'>
-                                        <InputGroupAddon addonType='prepend'>
-                                            <InputGroupText>
-                                                <i className='ni ni-lock-circle-open' />
-                                            </InputGroupText>
-                                        </InputGroupAddon>
-                                        <Input placeholder='Password' type='password' autoComplete='new-password' />
-                                    </InputGroup>
-                                </FormGroup>
-                                <div className='custom-control custom-control-alternative custom-checkbox'>
-                                    <input
-                                        className='custom-control-input'
-                                        id=' customCheckLogin'
-                                        type='checkbox'
-                                    />
-                                    {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                                    <label
-                                        className='custom-control-label'
-                                        htmlFor=' customCheckLogin'
-                                    >
-                                        <span className='text-muted'>Remember me</span>
-                                    </label>
-                                </div>
-                                <div className='text-center'>
-                                    <Button className='my-4' color='primary' type='button'>
-                                        Sign in
-                                    </Button>
-                                </div>
-                            </Form>
+                            <Formik
+                                initialValues={{
+                                    username : '',
+                                    password : '',
+                                }}
+                                validationSchema={Yup.object().shape({
+                                    username : Yup.string().required('Username is required'),
+                                    password : Yup.string().required('Password is required'),
+                                })}
+                                onSubmit={({ username, password },
+                                    {
+                                        setStatus,
+                                        setSubmitting,
+                                    }) =>
+                                {
+                                    setStatus();
+                                    // eslint-disable-next-line max-len,react/destructuring-assignment
+                                    // const result = await this.props.doLogin(username, password);
+                                    console.log(username);
+                                    console.log(password);
+                                    setSubmitting(false);
+                                    setStatus('Something went wrong please contact with our support hub.');
+                                }}
+                                render={({ errors, status, touched, isSubmitting }) => (
+                                    <Form role='form'>
+                                        <FormGroup className='mb-3'>
+                                            <InputGroup className='input-group-alternative'>
+                                                <InputGroupAddon addonType='prepend'>
+                                                    <InputGroupText>
+                                                        <i className='ni ni-email-83' />
+                                                    </InputGroupText>
+                                                </InputGroupAddon>
+                                                <Field name='username' type='email' autoComplete='new-email' className='custom-login' />
+                                                <ErrorMessage name='username' component='div' className='invalid-feedback left-c' />
+                                            </InputGroup>
+                                        </FormGroup>
+                                        <FormGroup>
+                                            <InputGroup className='input-group-alternative'>
+                                                <InputGroupAddon addonType='prepend'>
+                                                    <InputGroupText>
+                                                        <i className='ni ni-lock-circle-open' />
+                                                    </InputGroupText>
+                                                </InputGroupAddon>
+                                                <Field name='password' type='Password' autoComplete='new-password' className='custom-login' />
+                                                <ErrorMessage name='password' component='div' className='invalid-feedback left-c' />
+                                            </InputGroup>
+                                        </FormGroup>
+                                        <div className='custom-control custom-control-alternative custom-checkbox'>
+                                            <input
+                                                className='custom-control-input'
+                                                id=' customCheckLogin'
+                                                type='checkbox'
+                                            />
+                                            {/* eslint-disable-next-line max-len */}
+                                            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                                            <label
+                                                className='custom-control-label'
+                                                htmlFor=' customCheckLogin'
+                                            >
+                                                <span className='text-muted'>Remember me</span>
+                                            </label>
+                                        </div>
+                                        <div className='text-center'>
+                                            <Button className='my-4' color='primary' type='submit'>
+                                                Sign in
+                                            </Button>
+                                            {isSubmitting
+                                            && <img
+                                                alt='loader'
+                                                src='data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=='
+                                            />}
+                                        </div>
+                                        {status
+                                        && <div className='alert alert-danger'>{status}</div>}
+                                    </Form>
+                                )}
+
+                            />
                         </CardBody>
                     </Card>
                     <Row className='mt-3'>
@@ -137,4 +174,4 @@ class Login extends React.Component
     }
 }
 
-export default Login;
+export default connect(null, null)(Login);
