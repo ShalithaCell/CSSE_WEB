@@ -58,7 +58,7 @@ class AdminNavbar extends React.Component
                                         <span className='avatar avatar-sm rounded-circle'>
                                             <img
                                                 alt='...'
-                                                src={import("../../assets/img/theme/team-4-800x800.jpg")}
+                                                src={import("assets/img/theme/team-4-800x800.jpg")}
                                             />
                                         </span>
                                         <Media className='ml-2 d-none d-lg-block'>
@@ -89,7 +89,7 @@ class AdminNavbar extends React.Component
                                         <span>Support</span>
                                     </DropdownItem>
                                     <DropdownItem divider />
-                                    <DropdownItem href='#pablo' >
+                                    <DropdownItem href='#pablo'>
                                         <i className='ni ni-user-run' />
                                         <span>Logout</span>
                                     </DropdownItem>

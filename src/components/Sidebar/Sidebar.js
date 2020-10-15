@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-handler-names */
+/* eslint-disable react/jsx-handler-names,react/destructuring-assignment */
 import React from "react";
 import { NavLink as NavLinkRRD, Link } from "react-router-dom";
 // nodejs library to set properties for components
@@ -49,14 +49,11 @@ class Sidebar extends React.Component
     }
 
     // verifies if routeName is the one active (in browser input)
-    activeRoute(routeName)
-    {
-        // eslint-disable-next-line react/destructuring-assignment,react/prop-types
-        return this.props.location.pathname.indexOf(routeName) > -1 ? "active" : "";
-    }
+    // eslint-disable-next-line no-invalid-this,react/prop-types
+    activeRoute = (routeName) => (this.props.location.pathname.indexOf(routeName) > -1 ? "active" : "")
 
     // toggles collapse between opened and closed (true/false)
-    toggleCollapse()
+    toggleCollapse = () =>
     {
         this.setState({
             // eslint-disable-next-line react/destructuring-assignment,react/no-access-state-in-setstate
@@ -65,7 +62,7 @@ class Sidebar extends React.Component
     }
 
     // closes the collapse
-    closeCollapse()
+    closeCollapse = () =>
     {
         this.setState({
             collapseOpen : false,
@@ -73,26 +70,24 @@ class Sidebar extends React.Component
     }
 
     // creates the links that appear in the left menu / Sidebar
-    createLinks(routes)
-    {
-        return routes.map((prop, i) => (
-            <NavItem key={i.toString()}>
-                <NavLink
-                    to={prop.layout + prop.path}
-                    tag={NavLinkRRD}
-                    onClick={this.closeCollapse}
-                    activeClassName='active'
-                >
-                    <i className={prop.icon} />
-                    {prop.name}
-                </NavLink>
-            </NavItem>
-        ));
-    }
+    createLinks = (routes) => routes.map((prop, i) => (
+        <NavItem key={i.toString()}>
+            <NavLink
+                to={prop.layout + prop.path}
+                tag={NavLinkRRD}
+                onClick={this.closeCollapse}
+                activeClassName='active'
+            >
+                <i className={prop.icon} />
+                {prop.name}
+            </NavLink>
+        </NavItem>
+    ))
 
     render()
     {
         const { routes, logo } = this.props;
+
         let navbarBrandProps;
 
         if (logo && logo.innerLink)
