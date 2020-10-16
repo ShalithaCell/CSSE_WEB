@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import React from "react";
 // react plugin used to create google maps
 import {
@@ -22,15 +23,22 @@ import {
 } from "reactstrap";
 
 // core components
+import { connect } from "react-redux";
+import MaterialTable from "material-table";
+import Button from '@material-ui/core/Button';
 import Header from "../../components/Headers/Header";
-// mapTypeId={google.maps.MapTypeId.ROADMAP}
+
+import { fetchSuppliers } from "../../redux/action/supplierAction";
 
 class Maps extends React.Component
 {
-    constructor()
+    constructor(props)
     {
-        super();
+        super(props);
         this.state = {};
+
+        // eslint-disable-next-line react/destructuring-assignment
+        this.props.fetchSuppliers();
     }
 
     render()
@@ -44,12 +52,31 @@ class Maps extends React.Component
                         <div className='col'>
                             <Card className='shadow'>
                                 <CardHeader className='border-0'>
-                                    <h3 className='mb-0'>Card tables</h3>
+                                    <h3 className='mb-0'>Suppliers List</h3>
+                                    <Button variant='outlined' color='primary'>
+                                        Primary
+                                    </Button>
                                 </CardHeader>
-
-                                <CardFooter className='py-4'>
-
-                                </CardFooter>
+                                <MaterialTable
+                                    title=''
+                                    columns={[
+                                        { title: 'Supplier', field: 'name' },
+                                        { title: 'Email', field: 'email' },
+                                        { title: 'Location', field: 'location' },
+                                        { title: 'Contact', field: 'contactNumber' },
+                                        { title: 'Availability', field: 'availability' },
+                                    ]}
+                                    data={this.props.supplier.suppliers}
+                                    options={{
+                                        actionsColumnIndex : -1,
+                                        search             : true,
+                                        headerStyle        : {
+                                            backgroundColor : '#8898aa',
+                                            color           : '#FFF',
+                                        },
+                                    }}
+                                />
+                                <CardFooter className='py-4' />
                             </Card>
                         </div>
                     </Row>
@@ -59,4 +86,8 @@ class Maps extends React.Component
     }
 }
 
-export default Maps;
+const mapStateToProps = (state) => ({
+    supplier : state.supplier,
+});
+
+export default connect(mapStateToProps, { fetchSuppliers })(Maps);
