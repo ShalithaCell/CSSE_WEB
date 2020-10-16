@@ -91,7 +91,7 @@ class Login extends React.Component
                                     console.log(username);
                                     console.log(password);
                                     setSubmitting(false);
-                                    setStatus('Something went wrong please contact with our support hub.');
+                                    setStatus('Something went wrong please contact with our support hub.- shalithax@gmail.com');
                                 }}
                                 render={({ errors, status, touched, isSubmitting }) => (
                                     <Form role='form'>

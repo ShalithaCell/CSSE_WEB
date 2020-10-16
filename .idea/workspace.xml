@@ -19,7 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e673d3c-e34d-4d15-aa18-c71353398034" name="Default Changelist" comment="impl firebase" />
+    <list default="true" id="9e673d3c-e34d-4d15-aa18-c71353398034" name="Default Changelist" comment="impl firebase">
+      <change afterPath="$PROJECT_DIR$/src/base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,8 +33,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -88,7 +93,7 @@
       <workItem from="1602582133763" duration="5221000" />
       <workItem from="1602644693913" duration="20531000" />
       <workItem from="1602732731764" duration="765000" />
-      <workItem from="1602734030298" duration="17087000" />
+      <workItem from="1602734030298" duration="20807000" />
     </task>
     <task id="LOCAL-00001" summary="add git ignore">
       <created>1602651816258</created>
@@ -153,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602767115501</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="impl firebase">
+      <created>1602767486037</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1602767486037</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,31 +212,31 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602744680108" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1602763547242">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1602783273712">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602692737475" />
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602783273712" />
     <state width="1899" height="282" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602763547242" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1602763547242">
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1602783273712">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602692737475" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602783273712" />
     <state width="1899" height="282" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602763547242" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1602763547242">
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1602783273712">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602692737474" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602783273712" />
     <state width="1899" height="282" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602763547242" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1602763547242">
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1602783273712">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602692737475" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602783273712" />
     <state width="1899" height="282" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602763547242" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1602767326152">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1602767487226">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602692727518" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602767326152" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602767487226" />
     <state x="563" y="131" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602751068691">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
