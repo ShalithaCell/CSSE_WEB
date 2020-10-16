@@ -10,6 +10,8 @@ import routes from "../routes";
 import Footer from "../components/Footers/AdminFooter";
 import AdminNavbar from "../components/Navbars/AuthNavbar";
 
+import logoReact from '../assets/img/brand/argon-react.png';
+
 class Admin extends React.Component
 {
     componentDidUpdate(e)
@@ -69,7 +71,7 @@ class Admin extends React.Component
                     routes={routes}
                     logo={{
                         innerLink : "/admin/index",
-                        imgSrc    : import("assets/img/brand/argon-react.png"),
+                        imgSrc    : logoReact,
                         imgAlt    : "...",
                     }}
                 />

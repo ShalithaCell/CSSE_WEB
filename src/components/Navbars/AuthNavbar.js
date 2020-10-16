@@ -13,6 +13,9 @@ import {
     Col,
 } from "reactstrap";
 
+import logo from '../../assets/img/brand/argon-react-white.png';
+import lgoReact from '../../assets/img/brand/argon-react.png';
+
 class AdminNavbar extends React.Component
 {
     constructor()
@@ -31,8 +34,9 @@ class AdminNavbar extends React.Component
                 >
                     <Container className='px-4'>
                         <NavbarBrand to='/' tag={Link}>
-                            <img alt='...' src={import("assets/img/brand/argon-react-white.png")} />
+                            <img alt='...' src={logo} />
                         </NavbarBrand>
+                        {/* eslint-disable-next-line react/button-has-type */}
                         <button className='navbar-toggler' id='navbar-collapse-main'>
                             <span className='navbar-toggler-icon' />
                         </button>
@@ -43,11 +47,12 @@ class AdminNavbar extends React.Component
                                         <Link to='/'>
                                             <img
                                                 alt='...'
-                                                src={import("assets/img/brand/argon-react.png")}
+                                                src={lgoReact}
                                             />
                                         </Link>
                                     </Col>
                                     <Col className='collapse-close' xs='6'>
+                                        {/* eslint-disable-next-line react/button-has-type */}
                                         <button
                                             className='navbar-toggler'
                                             id='navbar-collapse-main'

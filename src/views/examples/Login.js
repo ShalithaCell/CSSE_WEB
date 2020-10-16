@@ -19,16 +19,20 @@ import {
 
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-
 import { connect } from "react-redux";
+import { doLogin } from "../../redux/action/userAction";
+
 import githubImg from '../../assets/img/icons/common/github.svg';
 import googleImg from '../../assets/img/icons/common/google.svg';
+import { SetSession } from "../../services/sessionManagement";
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Login extends React.Component
 {
     render()
     {
+        const { history } = this.props;
+
         return (
             <>
                 <Col lg='5' md='7'>
@@ -79,19 +83,51 @@ class Login extends React.Component
                                     username : Yup.string().required('Username is required'),
                                     password : Yup.string().required('Password is required'),
                                 })}
-                                onSubmit={({ username, password },
+                                onSubmit={async ({ username, password },
                                     {
                                         setStatus,
                                         setSubmitting,
                                     }) =>
                                 {
                                     setStatus();
-                                    // eslint-disable-next-line max-len,react/destructuring-assignment
-                                    // const result = await this.props.doLogin(username, password);
-                                    console.log(username);
-                                    console.log(password);
-                                    setSubmitting(false);
-                                    setStatus('Something went wrong please contact with our support hub.- shalithax@gmail.com');
+
+                                    // eslint-disable-next-line react/destructuring-assignment
+                                    const result = await this.props.doLogin(
+                                        username,
+                                        password,
+                                    );
+
+                                    if (result.success && !result.error)
+                                    { // success login
+                                        // set session
+                                        const sessionObj = {
+                                            sessionData : {
+                                                authenticated : true,
+                                                userID        : result.data.userID,
+                                                userName      : result.data.userName,
+                                                roleID        : result.data.roleID,
+                                                role          : result.data.userID,
+                                                email         : result.data.role,
+                                                orgID         : result.data.orgID,
+                                                phone         : result.data.phone,
+                                                token         : result.data.token,
+                                                users         : [],
+                                            },
+                                        };
+
+                                        SetSession(sessionObj);
+                                        history.push('/');
+                                    }
+                                    else if (!result.success && !result.error)
+                                    {
+                                        setSubmitting(false);
+                                        setStatus(result.data.errorMessages);
+                                    }
+                                    else
+                                    {
+                                        setSubmitting(false);
+                                        setStatus('Something went wrong please contact with our support hub.- shalithax@gmail.com');
+                                    }
                                 }}
                                 render={({ errors, status, touched, isSubmitting }) => (
                                     <Form role='form'>
@@ -146,7 +182,6 @@ class Login extends React.Component
                                         && <div className='alert alert-danger'>{status}</div>}
                                     </Form>
                                 )}
-
                             />
                         </CardBody>
                     </Card>
@@ -174,4 +209,8 @@ class Login extends React.Component
     }
 }
 
-export default connect(null, null)(Login);
+const mapStateToProps = (state) => ({
+    forgotPwPop : state.system.popupForgotpwDialog,
+});
+
+export default connect(mapStateToProps, { doLogin })(Login);
