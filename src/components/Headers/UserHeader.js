@@ -2,6 +2,7 @@ import React from "react";
 
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
+import profileCover from '../../assets/img/theme/profile-cover.jpg';
 
 class UserHeader extends React.Component
 {
@@ -20,7 +21,7 @@ class UserHeader extends React.Component
                     style={{
                         minHeight       : "600px",
                         backgroundImage :
-              `url(${import("assets/img/theme/profile-cover.jpg")})`,
+              `url(${profileCover})`,
                         backgroundSize     : "cover",
                         backgroundPosition : "center top",
                     }}
