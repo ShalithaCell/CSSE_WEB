@@ -1,4 +1,4 @@
-/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/destructuring-assignment,max-len */
 import React from "react";
 // react plugin used to create google maps
 import {
@@ -25,19 +25,48 @@ import {
 // core components
 import { connect } from "react-redux";
 import MaterialTable from "material-table";
-import Button from '@material-ui/core/Button';
+import { Button } from 'rsuite';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import Header from "../../components/Headers/Header";
 
-import { fetchSuppliers } from "../../redux/action/supplierAction";
+import {
+    fetchSuppliers,
+    handleSupplierAddDialogStatus,
+    removeSupplier,
+} from "../../redux/action/supplierAction";
+import { DIALOG_NEW_SUPPLIER } from "../../redux/actionTypes";
+import RemoveConfirmDialog from "../../components/Dialogs/RemoveConfirmDialog";
 
 class Maps extends React.Component
 {
     constructor(props)
     {
         super(props);
-        this.state = {};
+        this.state = {
+            popupDelete : false,
+            docID       : null,
+        };
 
         // eslint-disable-next-line react/destructuring-assignment
+        this.props.fetchSuppliers();
+    }
+
+    handleOnRemoveClick = async (id) =>
+    {
+        if (id === 'btnNo')
+        {
+            this.setState({
+                popupDelete : false,
+            });
+        }
+
+        await this.props.removeSupplier(this.state.docID);
+
+        this.setState({
+            popupDelete : false,
+        });
+
         this.props.fetchSuppliers();
     }
 
@@ -52,10 +81,23 @@ class Maps extends React.Component
                         <div className='col'>
                             <Card className='shadow'>
                                 <CardHeader className='border-0'>
-                                    <h3 className='mb-0'>Suppliers List</h3>
-                                    <Button variant='outlined' color='primary'>
-                                        Primary
-                                    </Button>
+                                    <div className='row col-md-12 form-inline'>
+                                        <div className='col-md-10'>
+                                            <h3 className='mb-0 float-left'>Suppliers List</h3>
+                                        </div>
+                                        <div className='col-md-2'>
+                                            <Button
+                                                className='float-right'
+                                                color='green'
+                                                onClick={() => this.props.handleSupplierAddDialogStatus(true, null)}
+                                            >
+                                                New supplier
+                                                {' '}
+                                                <FontAwesomeIcon icon={faPlus} />
+                                            </Button>
+                                        </div>
+                                    </div>
+
                                 </CardHeader>
                                 <MaterialTable
                                     title=''
@@ -67,9 +109,24 @@ class Maps extends React.Component
                                         { title: 'Availability', field: 'availability' },
                                     ]}
                                     data={this.props.supplier.suppliers}
+                                    actions={[
+                                        (rowData) => ({
+                                            icon    : 'edit',
+                                            tooltip : 'Click here to edit supplier',
+                                            onClick : (event, Data) => this.props.handleSupplierAddDialogStatus(true, Data),
+                                            // disabled : !rowData.modifyAllowed
+                                        }),
+                                        (rowData) => ({
+                                            icon    : 'delete',
+                                            tooltip : 'Click here to remove supplier',
+                                            onClick : (event, Data) => this.setState({ popupDelete: true, docID: Data.id }),
+                                            // disabled : !rowData.modifyAllowed
+                                        }),
+                                    ]}
                                     options={{
                                         actionsColumnIndex : -1,
                                         search             : true,
+                                        pageSize           : 10,
                                         headerStyle        : {
                                             backgroundColor : '#8898aa',
                                             color           : '#FFF',
@@ -81,13 +138,21 @@ class Maps extends React.Component
                         </div>
                     </Row>
                 </Container>
+                <RemoveConfirmDialog popupDelete={this.state.popupDelete} item={this.state.removeItem} onRemoveClick={this.handleOnRemoveClick} />
             </>
         );
     }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, dispatch) => ({
     supplier : state.supplier,
 });
 
-export default connect(mapStateToProps, { fetchSuppliers })(Maps);
+export default connect(
+    mapStateToProps,
+    {
+        handleSupplierAddDialogStatus,
+        fetchSuppliers,
+        removeSupplier,
+    },
+)(Maps);

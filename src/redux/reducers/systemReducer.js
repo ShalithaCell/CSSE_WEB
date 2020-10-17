@@ -4,6 +4,7 @@ import {
     SET_PERMISSION_LIST,
     SET_SESSION_EXPIRED,
     UPDATE_USER_NAME_LIST,
+    DIALOG_NEW_SUPPLIER,
 } from '../actionTypes';
 
 const initialState = {
@@ -12,6 +13,8 @@ const initialState = {
     sessionExpired      : false,
     userNameList        : [],
     permissonLevels     : null,
+    newSupplierDialog   : false,
+    supplierEditableID  : null,
 };
 
 export default function(state = initialState, action)
@@ -42,6 +45,12 @@ export default function(state = initialState, action)
             return {
                 ...state,
                 permissonLevels : action.payload,
+            };
+        case DIALOG_NEW_SUPPLIER:
+            return {
+                ...state,
+                newSupplierDialog  : action.payload.action,
+                supplierEditableID : action.payload.editID,
             };
         default:
             return state;

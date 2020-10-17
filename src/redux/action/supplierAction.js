@@ -1,8 +1,7 @@
 import { app } from "firebase";
 import { DATABASE_COLLECTION_SUPPLIER } from "../../config";
-import { SUPPLIER_REMOVE_ALL, SUPPLIER_APPEND } from "../actionTypes";
+import { SUPPLIER_REMOVE_ALL, SUPPLIER_APPEND, DIALOG_NEW_SUPPLIER } from "../actionTypes";
 
-// eslint-disable-next-line import/prefer-default-export
 export const fetchSuppliers = () => async (dispatch) =>
 {
     await dispatch({
@@ -20,11 +19,45 @@ export const fetchSuppliers = () => async (dispatch) =>
                     const { id } = doc;
                     const data = doc.data();
 
-                    dispatch({
-                        type    : SUPPLIER_APPEND,
-                        payload : { ...data, id },
-                    });
+                    if (data.name !== '')
+                    {
+                        dispatch({
+                            type    : SUPPLIER_APPEND,
+                            payload : { ...data, id },
+                        });
+                    }
                 }
             });
         });
+};
+
+export const handleSupplierAddDialogStatus = (action, editID) => (dispatch) =>
+{
+    dispatch({
+        type    : DIALOG_NEW_SUPPLIER,
+        payload : { action, editID },
+    });
+};
+
+export const addNewSupplier = (supplierObj) => async (dispatch) =>
+{
+    await app().firestore()
+        .collection(DATABASE_COLLECTION_SUPPLIER)
+        .add({ ...supplierObj });
+};
+
+export const updateSupplier = (supplierObj, id) => async (dispatch) =>
+{
+    await app().firestore()
+        .collection(DATABASE_COLLECTION_SUPPLIER)
+        .doc(id)
+        .update({ ...supplierObj });
+};
+
+export const removeSupplier = (id) => async (dispatch) =>
+{
+    await app().firestore()
+        .collection(DATABASE_COLLECTION_SUPPLIER)
+        .doc(id)
+        .delete();
 };
