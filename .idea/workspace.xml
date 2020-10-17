@@ -19,27 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e673d3c-e34d-4d15-aa18-c71353398034" name="Default Changelist" comment="finished Login">
-      <change afterPath="$PROJECT_DIR$/.idea/CSSE_Web.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/action/userAction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/authenticationService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/sessionManagement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+    <list default="true" id="9e673d3c-e34d-4d15-aa18-c71353398034" name="Default Changelist" comment="finished supplier CRUD">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Headers/UserHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Headers/UserHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbars/AdminNavbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbars/AdminNavbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbars/AuthNavbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbars/AuthNavbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/encryptionServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/encryptionServices.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/examples/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/examples/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/RemoveConfirmDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/RemoveConfirmDialog.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/examples/Maps.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/examples/Maps.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +40,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/impl_redux" />
+        <entry key="$PROJECT_DIR$" value="feature/feat_login" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -84,7 +66,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -96,20 +78,21 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\shali\OneDrive\Documents\MyProjects\CSSE\CSSE_Web\src\redux\action" />
-      <recent name="C:\Users\shali\OneDrive\Documents\MyProjects\CSSE\CSSE_Web\src\redux" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\shali\OneDrive\Documents\MyProjects\CSSE\CSSE_Web\src\assets\img" />
       <recent name="C:\Users\shali\OneDrive\Documents\MyProjects\CSSE\CSSE_Web\src\services" />
       <recent name="C:\Users\shali\OneDrive\Documents\MyProjects\CSSE\CSSE_Web\src\component\organizations" />
       <recent name="C:\Users\shali\OneDrive\Documents\MyProjects\CSSE\CSSE_Web\src\component\supplier" />
       <recent name="C:\Users\shali\OneDrive\Documents\MyProjects\CSSE\CSSE_Web\src\redux" />
-      <recent name="C:\Users\shali\OneDrive\Documents\MyProjects\CSSE\CSSE_Web\src\resources\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\shali\OneDrive\Documents\MyProjects\CSSE\CSSE_Web\src\components" />
+      <recent name="C:\Users\shali\OneDrive\Documents\MyProjects\CSSE\CSSE_Web\src\redux\action" />
+      <recent name="C:\Users\shali\OneDrive\Documents\MyProjects\CSSE\CSSE_Web\src\redux" />
     </key>
   </component>
   <component name="RunManager">
@@ -135,7 +118,9 @@
       <workItem from="1602734030298" duration="20807000" />
       <workItem from="1602818446612" duration="1729000" />
       <workItem from="1602820582671" duration="15383000" />
-      <workItem from="1602854372027" duration="3376000" />
+      <workItem from="1602854372027" duration="12852000" />
+      <workItem from="1602900265833" duration="29572000" />
+      <workItem from="1602944679890" duration="1124000" />
     </task>
     <task id="LOCAL-00001" summary="add git ignore">
       <created>1602651816258</created>
@@ -214,7 +199,28 @@
       <option name="project" value="LOCAL" />
       <updated>1602818754798</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="finished Login">
+      <created>1602857942259</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1602857942259</updated>
+    </task>
+    <task id="LOCAL-00013" summary="finished supplier fetch">
+      <created>1602870766005</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1602870766005</updated>
+    </task>
+    <task id="LOCAL-00014" summary="finished supplier CRUD">
+      <created>1602943089931</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1602943089931</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +249,9 @@
     <MESSAGE value="configure react redux with thunk" />
     <MESSAGE value="impl firebase" />
     <MESSAGE value="finished Login" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished Login" />
+    <MESSAGE value="finished supplier fetch" />
+    <MESSAGE value="finished supplier CRUD" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished supplier CRUD" />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="198" key="#Inspections" timestamp="1602820447740">
@@ -267,35 +275,35 @@
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602818846742" />
     <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602744680108" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1602857775046">
+    <state width="1899" height="163" key="GridCell.Tab.0.bottom" timestamp="1602943110424">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602857775046" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602850203201" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1602857775046">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602908843625" />
+    <state width="1899" height="163" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602943110424" />
+    <state width="1899" height="163" key="GridCell.Tab.0.center" timestamp="1602943110424">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602857775046" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602850203201" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1602857775046">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602908843624" />
+    <state width="1899" height="163" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602943110424" />
+    <state width="1899" height="163" key="GridCell.Tab.0.left" timestamp="1602943110424">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602857775046" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602850203201" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1602857775046">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602908843623" />
+    <state width="1899" height="163" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602943110424" />
+    <state width="1899" height="163" key="GridCell.Tab.0.right" timestamp="1602943110424">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602857775046" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602850203201" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1602820473952">
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602908843624" />
+    <state width="1899" height="163" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602943110424" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1602904609787">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602820473952" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1602818757726">
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602904609787" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1602943091220">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602818757726" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602767487226" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602870767081" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602943091220" />
     <state x="563" y="131" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602751068691">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -305,5 +313,9 @@
     </state>
     <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602856692081" />
     <state x="667" y="253" width="585" height="534" key="find.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602848311627" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1602868680494">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602868680494" />
   </component>
 </project>

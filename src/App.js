@@ -7,6 +7,8 @@ import Auth from "./layouts/Auth";
 import './assets/css/style-custom.css';
 import IsAuthenticated from "./services/authenticationService";
 import { setUserState } from "./redux/action/userAction";
+import 'rsuite/dist/styles/rsuite-default.css';
+import NewSupplierDialog from "./components/Dialogs/newSupplierDialog";
 
 class App extends Component
 {
@@ -32,6 +34,7 @@ class App extends Component
                         <Route path='/' component={Auth} />
                         {/* eslint-disable-next-line indent,react/jsx-closing-tag-location */}
                     </Switch>}
+                <NewSupplierDialog />
             </BrowserRouter>
         );
     }
