@@ -32,6 +32,7 @@ class RemoveConfirmDialog extends Component
                             <br />
                             <h6>
                                 Are you sure want to remove
+                                {' '}
                                 { item }
                                 {' '}
                                 ?

@@ -46,6 +46,7 @@ class Maps extends React.Component
         this.state = {
             popupDelete : false,
             docID       : null,
+            removeItem  : '',
         };
 
         // eslint-disable-next-line react/destructuring-assignment
@@ -59,6 +60,8 @@ class Maps extends React.Component
             this.setState({
                 popupDelete : false,
             });
+
+            return;
         }
 
         await this.props.removeSupplier(this.state.docID);
@@ -119,7 +122,13 @@ class Maps extends React.Component
                                         (rowData) => ({
                                             icon    : 'delete',
                                             tooltip : 'Click here to remove supplier',
-                                            onClick : (event, Data) => this.setState({ popupDelete: true, docID: Data.id }),
+                                            onClick : (event, Data) => this.setState(
+                                                {
+                                                    popupDelete : true,
+                                                    docID       : Data.id,
+                                                    removeItem  : Data.name,
+                                                },
+                                            ),
                                             // disabled : !rowData.modifyAllowed
                                         }),
                                     ]}
