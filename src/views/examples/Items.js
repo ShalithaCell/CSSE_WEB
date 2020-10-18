@@ -85,26 +85,26 @@ class Items extends React.Component
                                         { title: 'Availability', field: 'availability' },
                                     ]}
                                     data={items}
-                                    // actions={[
-                                    //     (rowData) => ({
-                                    //         icon    : 'edit',
-                                    //         tooltip : 'Click here to edit supplier',
-                                    //         onClick : (event, Data) => this.props.handleSupplierAddDialogStatus(true, Data),
-                                    //         // disabled : !rowData.modifyAllowed
-                                    //     }),
-                                    //     (rowData) => ({
-                                    //         icon    : 'delete',
-                                    //         tooltip : 'Click here to remove supplier',
-                                    //         onClick : (event, Data) => this.setState(
-                                    //             {
-                                    //                 popupDelete : true,
-                                    //                 docID       : Data.id,
-                                    //                 removeItem  : Data.name,
-                                    //             },
-                                    //         ),
-                                    //         // disabled : !rowData.modifyAllowed
-                                    //     }),
-                                    // ]}
+                                    actions={[
+                                        (rowData) => ({
+                                            icon    : 'edit',
+                                            tooltip : 'Click here to edit Item',
+                                            // onClick : (event, Data) => this.props.handleSupplierAddDialogStatus(true, Data),
+                                            // disabled : !rowData.modifyAllowed
+                                        }),
+                                        (rowData) => ({
+                                            icon    : 'delete',
+                                            tooltip : 'Click here to remove Item',
+                                            // onClick : (event, Data) => this.setState(
+                                            //     {
+                                            //         popupDelete : true,
+                                            //         docID       : Data.id,
+                                            //         removeItem  : Data.name,
+                                            //     },
+                                            // ),
+                                            // disabled : !rowData.modifyAllowed
+                                        }),
+                                    ]}
                                     options={{
                                         actionsColumnIndex : -1,
                                         search             : true,

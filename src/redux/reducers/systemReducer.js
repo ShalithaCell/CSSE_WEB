@@ -4,7 +4,7 @@ import {
     SET_PERMISSION_LIST,
     SET_SESSION_EXPIRED,
     UPDATE_USER_NAME_LIST,
-    DIALOG_NEW_SUPPLIER, DIALOG_NEW_ITEM,
+    DIALOG_NEW_SUPPLIER, DIALOG_NEW_ITEM, DIALOG_NEW_ORDER,
 } from '../actionTypes';
 
 const initialState = {
@@ -17,6 +17,8 @@ const initialState = {
     supplierEditableID  : null,
     newItemDialog       : false,
     ItemEditableID      : null,
+    newOrderDialog      : false,
+    orderEditableID     : null,
 };
 
 export default function(state = initialState, action)
@@ -59,6 +61,12 @@ export default function(state = initialState, action)
                 ...state,
                 newItemDialog  : action.payload.action,
                 ItemEditableID : action.payload.editID,
+            };
+        case DIALOG_NEW_ORDER:
+            return {
+                ...state,
+                newOrderDialog  : action.payload.action,
+                orderEditableID : action.payload.editID,
             };
         default:
             return state;
