@@ -1,57 +1,76 @@
+/* eslint-disable no-console */
 import store from '../redux/store';
-import { decrypt } from './EncryptionService';
+import { decrypt } from "./encryptionServices";
 import { GetSession, DestroySession, SetSession } from './sessionManagement';
 
-export function IsAuthenticated( setUserState )
+/**
+ * Check is the application already authenticated or not
+ * @param setUserState
+ * @returns {boolean}
+ * @constructor
+ */
+function IsAuthenticated(setUserState)
 {
-	const state = store.getState(); //access to the redux branchActions
+    const state = store.getState(); // access to the redux branchActions
 
-	const localData = JSON.parse(GetSession()) //get the localstorage
+    const localData = JSON.parse(GetSession()); // get the localstorage
 
-	let sessionUser = null;
+    let sessionUser = null;
 
-	if(localData != null){ //check the local storage is not empty
-		try{
-			sessionUser = localData.sessionData; //load localstorage session
+    if (localData != null)
+    { // check the local storage is not empty
+        try
+        {
+            sessionUser = localData.sessionData; // load localstorage session
 
-			const hours  = Math.abs(new Date() - localData.create) / 36e5; //get session create date and today date difference
+            // eslint-disable-next-line max-len
+            const hours = Math.abs(new Date() - localData.create) / 36e5; // get session create date and today date difference
 
-			if(hours > 24){ //if session time is more than 24 hours; destroy the session
-				DestroySession()
-				return false;
-			}
+            if (hours > 24)
+            { // if session time is more than 24 hours; destroy the session
+                DestroySession();
 
-			if(sessionUser.token == null){ //check the session token is not valid
-				DestroySession()
-				return false;
-			}
+                return false;
+            }
 
-			let token =  sessionUser.token; //get the jwt token (encrypted token)
-			token = decrypt(token); //decrypt the token
+            if (sessionUser.token == null)
+            { // check the session token is not valid
+                DestroySession();
 
-			delete sessionUser[ 'token' ]; //delete the existing token
-			sessionUser.token = token; //set decrypted token
+                return false;
+            }
 
-			setUserState(sessionUser);
+            const { token } = sessionUser; // get the jwt token (encrypted token)
 
-			return true;
-		}
-		catch (e)
-		{
-			console.log('error occurred while authentication. destroyed th session.');
-			console.log(e);
-			//DestroySession();
-		}
-	}
+            // token = decrypt(token); // decrypt the token
 
-	let authToken = state.user; //get redux branchActions user
+            delete sessionUser.token; // delete the existing token
+            sessionUser.token = token; // set decrypted token
 
-	if(authToken.authenticated == false ||  authToken.userID == null || authToken.userName == null || authToken.roleID == null || authToken.email == null || authToken.token == null){
-		return false;
-	}
+            setUserState(sessionUser);
 
-	SetSession(state.user);
+            return true;
+        }
+        catch (e)
+        {
+            console.log('error occurred while authentication. destroyed th session.');
+            console.log(e);
+            // DestroySession();
+        }
+    }
 
-	return true;
+    const authToken = state.user; // get redux branchActions user
 
+    if (authToken.authenticated === false || authToken.userID == null
+		|| authToken.userName == null || authToken.roleID == null
+		|| authToken.email == null || authToken.token == null)
+    {
+        return false;
+    }
+
+    SetSession(state.user);
+
+    return true;
 }
+
+export default IsAuthenticated;

@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9e673d3c-e34d-4d15-aa18-c71353398034" name="Default Changelist" comment="code standards">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/NewItemDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/NewItemDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/NewOrderDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/NewOrderDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/RemoveConfirmDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/RemoveConfirmDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/newSupplierDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/newSupplierDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footers/AdminFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footers/AdminFooter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footers/AuthFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footers/AuthFooter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action/itemAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/itemAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action/orderAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/orderAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action/supplierAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/supplierAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action/userAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/userAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/itemReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/itemReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/authenticationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/authenticationService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/encryptionServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/encryptionServices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/sessionManagement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/sessionManagement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/examples/Items.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/examples/Items.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/examples/Orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/examples/Orders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/examples/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/examples/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/examples/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/examples/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/examples/Suppliers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/examples/Suppliers.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/orders_crud" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/gulpfile.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/services/sessionManagement.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/views/examples/Login.js" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1iom4zZxoWGS3Bfn5cKDXc30Osr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\shali\OneDrive\Documents\MyProjects\CSSE\CSSE_Web\src\assets\img" />
+      <recent name="C:\Users\shali\OneDrive\Documents\MyProjects\CSSE\CSSE_Web\src\services" />
+      <recent name="C:\Users\shali\OneDrive\Documents\MyProjects\CSSE\CSSE_Web\src\component\organizations" />
+      <recent name="C:\Users\shali\OneDrive\Documents\MyProjects\CSSE\CSSE_Web\src\component\supplier" />
+      <recent name="C:\Users\shali\OneDrive\Documents\MyProjects\CSSE\CSSE_Web\src\redux" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\shali\OneDrive\Documents\MyProjects\CSSE\CSSE_Web\src\components" />
+      <recent name="C:\Users\shali\OneDrive\Documents\MyProjects\CSSE\CSSE_Web\src\redux\action" />
+      <recent name="C:\Users\shali\OneDrive\Documents\MyProjects\CSSE\CSSE_Web\src\redux" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9e673d3c-e34d-4d15-aa18-c71353398034" name="Default Changelist" comment="" />
+      <created>1602582132592</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602582132592</updated>
+      <workItem from="1602582133763" duration="5221000" />
+      <workItem from="1602644693913" duration="20531000" />
+      <workItem from="1602732731764" duration="765000" />
+      <workItem from="1602734030298" duration="20807000" />
+      <workItem from="1602818446612" duration="1729000" />
+      <workItem from="1602820582671" duration="15383000" />
+      <workItem from="1602854372027" duration="12852000" />
+      <workItem from="1602900265833" duration="29572000" />
+      <workItem from="1602944679890" duration="8000000" />
+      <workItem from="1602990752199" duration="7543000" />
+      <workItem from="1603000561316" duration="11985000" />
+      <workItem from="1603021011792" duration="14433000" />
+    </task>
+    <task id="LOCAL-00001" summary="add git ignore">
+      <created>1602651816258</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602651816258</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add git ignore">
+      <created>1602675310844</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1602675310844</updated>
+    </task>
+    <task id="LOCAL-00003" summary="clean">
+      <created>1602688397854</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1602688397854</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add organization and supplier design">
+      <created>1602692726105</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1602692726105</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add necessary packages">
+      <created>1602744979923</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1602744979923</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add necessary packages">
+      <created>1602745198675</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1602745198675</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add necessary packages">
+      <created>1602745569106</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1602745569106</updated>
+    </task>
+    <task id="LOCAL-00008" summary="configure react redux with thunk">
+      <created>1602763377327</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1602763377327</updated>
+    </task>
+    <task id="LOCAL-00009" summary="impl firebase">
+      <created>1602767115501</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1602767115501</updated>
+    </task>
+    <task id="LOCAL-00010" summary="impl firebase">
+      <created>1602767486037</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1602767486037</updated>
+    </task>
+    <task id="LOCAL-00011" summary="impl firebase">
+      <created>1602818754798</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1602818754798</updated>
+    </task>
+    <task id="LOCAL-00012" summary="finished Login">
+      <created>1602857942259</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1602857942259</updated>
+    </task>
+    <task id="LOCAL-00013" summary="finished supplier fetch">
+      <created>1602870766005</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1602870766005</updated>
+    </task>
+    <task id="LOCAL-00014" summary="finished supplier CRUD">
+      <created>1602943089931</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1602943089931</updated>
+    </task>
+    <task id="LOCAL-00015" summary="finished supplier CRUD">
+      <created>1602946057794</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1602946057794</updated>
+    </task>
+    <task id="LOCAL-00016" summary="finished items CRUD">
+      <created>1603009730843</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1603009730843</updated>
+    </task>
+    <task id="LOCAL-00017" summary="finished order designs">
+      <created>1603030723332</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1603030723332</updated>
+    </task>
+    <task id="LOCAL-00018" summary="impl design">
+      <created>1603037593366</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1603037593366</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.env" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add git ignore" />
+    <MESSAGE value="clean" />
+    <MESSAGE value="add organization and supplier design" />
+    <MESSAGE value="add necessary packages" />
+    <MESSAGE value="configure react redux with thunk" />
+    <MESSAGE value="impl firebase" />
+    <MESSAGE value="finished Login" />
+    <MESSAGE value="finished supplier fetch" />
+    <MESSAGE value="finished supplier CRUD" />
+    <MESSAGE value="finished items CRUD" />
+    <MESSAGE value="finished order designs" />
+    <MESSAGE value="impl design" />
+    <MESSAGE value="code standards" />
+    <option name="LAST_COMMIT_MESSAGE" value="code standards" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="586" y="198" key="#Inspections" timestamp="1602820447740">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="586" y="198" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1602820447740" />
+    <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602582719997">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602582719997" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602687856154">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602687856154" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1602819078884">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602819078884" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1602995310767">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602995310767" />
+    <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602744680108" />
+    <state width="1899" height="163" key="GridCell.Tab.0.bottom" timestamp="1603039365170">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="163" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603039365170" />
+    <state width="1899" height="163" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603019302129" />
+    <state width="1899" height="163" key="GridCell.Tab.0.center" timestamp="1603039365169">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="163" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603039365169" />
+    <state width="1899" height="163" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603019302129" />
+    <state width="1899" height="163" key="GridCell.Tab.0.left" timestamp="1603039365169">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="163" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603039365169" />
+    <state width="1899" height="163" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603019302129" />
+    <state width="1899" height="163" key="GridCell.Tab.0.right" timestamp="1603039365169">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="163" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603039365169" />
+    <state width="1899" height="163" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603019302129" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1602904609787">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602904609787" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1603037603883">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603037603883" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603009732337" />
+    <state x="563" y="131" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602751068691">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="563" y="131" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602751068691" />
+    <state x="667" y="253" width="585" height="558" key="find.popup" timestamp="1603035258631">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="253" width="585" height="558" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603035258631" />
+    <state x="667" y="253" width="585" height="534" key="find.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602848311627" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1603028574623">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603028574623" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1602998561511">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602998561511" />
+  </component>
+</project>

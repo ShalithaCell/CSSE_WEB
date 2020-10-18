@@ -1,20 +1,24 @@
-import { UPDATE_SUPPLIER_DETAILS_LIST } from '../actionTypes';
+import { SUPPLIER_REMOVE_ALL, SUPPLIER_APPEND } from "../actionTypes";
 
 const initialState = {
-	supplierLists : []
-}
+    suppliers : [],
+};
 
 export default function(state = initialState, action)
 {
-	switch (action.type)
-	{
-		case UPDATE_SUPPLIER_DETAILS_LIST :
-			return {
-				...state,
-				supplierLists : action.payload
-			}
-			break;
-		default :
-			return state;
-	}
+    switch (action.type)
+    {
+        case SUPPLIER_APPEND:
+            return {
+                ...state,
+                suppliers : [ ...state.suppliers, action.payload ],
+            };
+        case SUPPLIER_REMOVE_ALL:
+            return {
+                ...state,
+                suppliers : [],
+            };
+        default:
+            return state;
+    }
 }

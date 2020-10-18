@@ -1,20 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import { Provider } from 'react-redux';
-import store from './redux/store';
+/* eslint-disable react/jsx-props-no-spreading */
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
-// eslint-disable-next-line no-undef
+import "./assets/plugins/nucleo/css/nucleo.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "./assets/scss/argon-dashboard-react.scss";
+
+import { Provider } from "react-redux";
+import Admin from "./layouts/Admin";
+import Auth from "./layouts/Auth";
+import store from "./redux/store";
+import App from "./App";
+
+/**
+ * All the application infrastructure are based on here
+ */
 ReactDOM.render(
-    <Provider store={ store }>
+    <Provider store={store}>
         <App />
-    </Provider>, 
-	document.getElementById('root')
+    </Provider>,
+    document.getElementById("root"),
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.register();

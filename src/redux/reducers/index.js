@@ -1,33 +1,29 @@
 import { combineReducers } from 'redux';
-import userReducer from './userReducer'
-import systemDefaults from './systemDefaults';
-import roleReducer from './roleReducer';
-import inventoryReducer from './inventoryReducer';
-import supplierReducer from './supplierReducer';
-import transactionReducer from './transactionReducer'
-import customerReducers from './customerReducers';
-import requestReducer from './requestReducer';
-import branchReducer from './branchReducer';
-import billReducer from './billReducer';
-import salaryReducer from './salaryReducer';
-import orgReducer from './orgReducer';
-import attendanceReducer from './attendanceReducer';
+import userReducer from "./userReducer";
+import systemReducer from "./systemReducer";
+import supplierReducer from "./supplierReducer";
+import itemReducer from "./itemReducer";
 
+/**
+ * all the reducers are combine together and export
+ * @type {Reducer<CombinedState<{
+ * supplier: ({suppliers}|{suppliers: []}|*),
+ * user: ({authenticated: *, role: *, phone: *, roleID: *, userName: *,
+ * userID: *, email: *, orgID: *, token: *}|{authenticated: boolean, role: null, roleID: null,
+ * userName: null, userID: null, email: null, orgID: null, token: null}|{users: *}|*),
+ * system: ({popupForgotpwDialog: *, supplierEditableID: null,
+ *             ItemEditableID: null, viewOrdersType: number, loader: boolean,
+ *             newSupplierDialog: boolean, newOrderDialog: boolean, sessionExpired: boolean,
+ *             newItemDialog: boolean, orderEditableID: null, permissonLevels: null, userNameList: []}),
+ * items: ({items}|*)}>>}
+ */
 const reducers = combineReducers(
-	{
-		user        : userReducer,
-		system      : systemDefaults,
-		role        : roleReducer,
-		customer    : customerReducers,
-		inventory  	: inventoryReducer,
-		transaction : transactionReducer,
-		request     : requestReducer,
-		branch      : branchReducer,
-		bill        : billReducer,
-		supplier    : supplierReducer,
-		salary      : salaryReducer,
-		org         : orgReducer,
-	  	attendance  : attendanceReducer
-	});
+    {
+        user     : userReducer,
+        system   : systemReducer,
+        supplier : supplierReducer,
+        items    : itemReducer,
+    },
+);
 
-export default reducers;	
+export default reducers;

@@ -1,0 +1,9 @@
+.custom-login{
+    border: none;
+    width: 88%;
+}
+
+.rs-picker-menu.rs-picker-select-menu, .rs-picker-menu.rs-picker-check-menu {
+    padding-top: 6px;
+    z-index: 99999999999 !important;
+}
