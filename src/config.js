@@ -15,3 +15,4 @@ export const TOAST_INFO = 'Info';
 
 // Database collections
 export const DATABASE_COLLECTION_SUPPLIER = 'suppliers';
+export const DATABASE_COLLECTION_ITEMS = 'items';

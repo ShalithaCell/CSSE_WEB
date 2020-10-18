@@ -1,9 +1,9 @@
 import Register from "./views/examples/Register";
 import Login from "./views/examples/Login";
 import Tables from "./views/examples/Tables";
-import Icons from "./views/examples/Icons";
+import Items from "./views/examples/Items";
 import Profile from "./views/examples/Profile";
-import Maps from "./views/examples/Maps";
+import Suppliers from "./views/examples/Suppliers";
 import Index from "./views/Index";
 
 const routes = [
@@ -15,17 +15,17 @@ const routes = [
         layout    : "/admin",
     },
     {
-        path      : "/icons",
-        name      : "Icons",
+        path      : "/items",
+        name      : "Items",
         icon      : "ni ni-planet text-blue",
-        component : Icons,
+        component : Items,
         layout    : "/admin",
     },
     {
-        path      : "/maps",
-        name      : "Maps",
+        path      : "/suppliers",
+        name      : "Suppliers",
         icon      : "ni ni-pin-3 text-orange",
-        component : Maps,
+        component : Suppliers,
         layout    : "/admin",
     },
     {

@@ -9,6 +9,7 @@ import IsAuthenticated from "./services/authenticationService";
 import { setUserState } from "./redux/action/userAction";
 import 'rsuite/dist/styles/rsuite-default.css';
 import NewSupplierDialog from "./components/Dialogs/newSupplierDialog";
+import NewItemDialog from "./components/Dialogs/NewItemDialog";
 
 class App extends Component
 {
@@ -35,6 +36,7 @@ class App extends Component
                         {/* eslint-disable-next-line indent,react/jsx-closing-tag-location */}
                     </Switch>}
                 <NewSupplierDialog />
+                <NewItemDialog />
             </BrowserRouter>
         );
     }
