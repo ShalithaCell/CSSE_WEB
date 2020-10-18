@@ -1,8 +1,12 @@
+/* eslint-disable react/jsx-one-expression-per-line,jsx-a11y/anchor-is-valid */
 import React from "react";
 
 // reactstrap components
 import { NavItem, NavLink, Nav, Container, Row, Col } from "reactstrap";
 
+/**
+ * login page footer
+ */
 class Login extends React.Component
 {
     constructor()
@@ -20,13 +24,13 @@ class Login extends React.Component
                         <Row className='align-items-center justify-content-xl-between'>
                             <Col xl='6'>
                                 <div className='copyright text-center text-xl-left text-muted'>
-                                    © 2018
+                                    © { new Date().getFullYear() }
                                     {" "}
                                     <a
                                         className='font-weight-bold ml-1'
-                                        href='https://www.creative-tim.com?ref=adr-auth-footer'
+                                        href='#'
                                     >
-                                        Creative Tim
+                                        2020-JUN-WE-03
                                     </a>
                                 </div>
                             </Col>
@@ -34,34 +38,18 @@ class Login extends React.Component
                                 <Nav className='nav-footer justify-content-center justify-content-xl-end'>
                                     <NavItem>
                                         <NavLink
-                                            href='https://www.creative-tim.com?ref=adr-auth-footer'
+                                            href='#'
                                             target='_blank'
                                         >
-                                            Creative Tim
+                                            2020-JUN-WE-03
                                         </NavLink>
                                     </NavItem>
                                     <NavItem>
                                         <NavLink
-                                            href='https://www.creative-tim.com/presentation?ref=adr-auth-footer'
+                                            href='#'
                                             target='_blank'
                                         >
                                             About Us
-                                        </NavLink>
-                                    </NavItem>
-                                    <NavItem>
-                                        <NavLink
-                                            href='http://blog.creative-tim.com?ref=adr-auth-footer'
-                                            target='_blank'
-                                        >
-                                            Blog
-                                        </NavLink>
-                                    </NavItem>
-                                    <NavItem>
-                                        <NavLink
-                                            href='https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md?ref=adr-auth-footer'
-                                            target='_blank'
-                                        >
-                                            MIT License
                                         </NavLink>
                                     </NavItem>
                                 </Nav>

@@ -3,6 +3,12 @@ import store from '../redux/store';
 import { decrypt } from "./encryptionServices";
 import { GetSession, DestroySession, SetSession } from './sessionManagement';
 
+/**
+ * Check is the application already authenticated or not
+ * @param setUserState
+ * @returns {boolean}
+ * @constructor
+ */
 function IsAuthenticated(setUserState)
 {
     const state = store.getState(); // access to the redux branchActions

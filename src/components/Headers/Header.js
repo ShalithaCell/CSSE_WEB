@@ -4,7 +4,8 @@ import React from "react";
 // reactstrap components
 import { Card, CardBody, CardTitle, Container, Row, Col } from "reactstrap";
 import { connect } from "react-redux";
-import { handleNewOrderDialogStatus } from "../../redux/action/orderAction";
+import { handleNewOrderDialogStatus, handleViewOrderType } from "../../redux/action/orderAction";
+import ViewOrderEnum from "../../redux/actionTypes";
 
 class Header extends React.Component
 {
@@ -23,8 +24,15 @@ class Header extends React.Component
                         <div className='header-body'>
                             {/* Card stats */}
                             <Row>
-                                <Col lg='6' xl='3'>
-                                    <Card className='card-stats mb-4 mb-xl-0'>
+                                <Col
+                                    lg='6'
+                                    xl='3'
+                                >
+                                    <Card
+                                        className='card-stats mb-4 mb-xl-0'
+                                        onClick={() => this.props.handleViewOrderType(1)}
+                                        style={{ cursor: 'pointer' }}
+                                    >
                                         <CardBody>
                                             <Row>
                                                 <div className='col'>
@@ -57,7 +65,11 @@ class Header extends React.Component
                                     </Card>
                                 </Col>
                                 <Col lg='6' xl='3'>
-                                    <Card className='card-stats mb-4 mb-xl-0'>
+                                    <Card
+                                        className='card-stats mb-4 mb-xl-0'
+                                        onClick={() => this.props.handleViewOrderType(2)}
+                                        style={{ cursor: 'pointer' }}
+                                    >
                                         <CardBody>
                                             <Row>
                                                 <div className='col'>
@@ -90,7 +102,11 @@ class Header extends React.Component
                                     </Card>
                                 </Col>
                                 <Col lg='6' xl='3'>
-                                    <Card className='card-stats mb-4 mb-xl-0'>
+                                    <Card
+                                        className='card-stats mb-4 mb-xl-0'
+                                        onClick={() => this.props.handleViewOrderType(3)}
+                                        style={{ cursor: 'pointer' }}
+                                    >
                                         <CardBody>
                                             <Row>
                                                 <div className='col'>
@@ -166,4 +182,8 @@ class Header extends React.Component
     }
 }
 
-export default connect(null, { handleNewOrderDialogStatus })(Header);
+const mapStateToProps = (state) => ({
+    viewType : state.system.viewOrdersType,
+});
+
+export default connect(null, { handleNewOrderDialogStatus, handleViewOrderType })(Header);

@@ -1,14 +1,13 @@
 /* eslint-disable consistent-return,no-plusplus,react/destructuring-assignment,max-len */
 import React, { useState, useEffect } from 'react';
-import { connect, useDispatch } from "react-redux";
+import { connect } from "react-redux";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogActions from "@material-ui/core/DialogActions";
-import Grid from '@material-ui/core/Grid';
 import TextField from "@material-ui/core/TextField";
 import InputLabel from "@material-ui/core/InputLabel";
-import { Button, SelectPicker } from 'rsuite';
+import { Button } from 'rsuite';
 import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
 import MaterialTable from "material-table";
 import DateFnsUtils from '@date-io/date-fns';
@@ -19,10 +18,17 @@ import { handleNewOrderDialogStatus } from "../../redux/action/orderAction";
 import { fetchSuppliers } from "../../redux/action/supplierAction";
 import 'date-fns';
 
+/**
+ * order placement dialog
+ * @param props
+ * @returns {JSX.Element}
+ * @constructor
+ */
 function NewOrderDialog(props)
 {
     const { isEnable } = props;
 
+    // initial state
     const [ item, setItem ] = useState({
         name      : '',
         qty       : '',

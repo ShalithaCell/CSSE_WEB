@@ -14,10 +14,17 @@ import { handleSupplierAddDialogStatus,
     updateSupplier,
 } from "../../redux/action/supplierAction";
 
+/**
+ * add new supplier dialog
+ * @param props
+ * @returns {JSX.Element}
+ * @constructor
+ */
 function NewSupplierDialog(props)
 {
     const { isEnable } = props;
 
+    // initial state
     const [ supplier, setSupplier ] = useState({
         name          : '',
         location      : '',
@@ -51,6 +58,7 @@ function NewSupplierDialog(props)
         }
     }, [ props.editID ]);
 
+    // all text-box text change handle event
     function handleOnTextChange(e)
     {
         e.preventDefault();
@@ -63,6 +71,7 @@ function NewSupplierDialog(props)
         );
     }
 
+    // validating the data
     function validating()
     {
         const error = {
@@ -120,13 +129,16 @@ function NewSupplierDialog(props)
         { return false; }
     }
 
+    // database saving method
     async function handleSaving()
     {
+        // check data is valid
         if (!validating())
         {
             return;
         }
 
+        // data to be saved
         const fireStoreObject = {
             userID        : '1234',
             availability  : true,

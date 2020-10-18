@@ -23,6 +23,9 @@ import { fetchItems, handleItemAddDialogStatus } from "../../redux/action/itemAc
 import { fetchSuppliers } from "../../redux/action/supplierAction";
 import NewSupplierDialog from "../../components/Dialogs/newSupplierDialog";
 
+/**
+ * Component for handle Items of the system
+ */
 class Items extends React.Component
 {
     constructor(props)

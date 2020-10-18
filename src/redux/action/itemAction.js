@@ -3,12 +3,16 @@ import { DATABASE_COLLECTION_ITEMS } from "../../config";
 import { DIALOG_NEW_ITEM, ITEM_APPEND } from "../actionTypes";
 import store from "../store";
 
-// eslint-disable-next-line import/prefer-default-export
+/**
+ * get the all items form the database and saved to the redux store
+ * @returns {function(*): Promise<void>}
+ */
 export const fetchItems = () => async (dispatch) =>
 {
     // get the state from the redux store
     const state = store.getState();
 
+    // filter the supplier list
     const { suppliers } = state.supplier;
 
     const objList = [];
@@ -46,6 +50,12 @@ export const fetchItems = () => async (dispatch) =>
         });
 };
 
+/**
+ * handle the add new items dialog visibility with connecting to the redux store
+ * @param action
+ * @param editID
+ * @returns {function(*): void}
+ */
 export const handleItemAddDialogStatus = (action, editID) => (dispatch) =>
 {
     dispatch({
@@ -54,6 +64,11 @@ export const handleItemAddDialogStatus = (action, editID) => (dispatch) =>
     });
 };
 
+/**
+ * add new item to the database
+ * @param itemObj
+ * @returns {function(*): Promise<void>}
+ */
 export const addNewItem = (itemObj) => async (dispatch) =>
 {
     await app().firestore()

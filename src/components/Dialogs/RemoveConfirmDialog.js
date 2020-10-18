@@ -7,6 +7,9 @@ import DialogActions from '@material-ui/core/DialogActions';
 import Button from '@material-ui/core/Button';
 import deleteImage from '../../assets/img/delete_img.png';
 
+/**
+ * This is the remove confirmation dialog for all entire application
+ */
 class RemoveConfirmDialog extends Component
 {
     render()

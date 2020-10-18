@@ -12,6 +12,9 @@ import NewSupplierDialog from "./components/Dialogs/newSupplierDialog";
 import NewItemDialog from "./components/Dialogs/NewItemDialog";
 import NewOrderDialog from "./components/Dialogs/NewOrderDialog";
 
+/**
+ * Application main entry point and the handling point
+ */
 class App extends Component
 {
     constructor(props)

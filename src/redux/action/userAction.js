@@ -1,29 +1,25 @@
 import {
     DO_LOGIN,
     DO_LOGOUT,
-    POPUP_SPINNER,
-    SET_PERMISSION_LIST,
-    SET_SESSION_EXPIRED,
-    UPDATE_USER_LIST,
 } from '../actionTypes';
-import {
-    CONFIRM_EMAIL_USER_ENDPOINT,
-    CONFIRM_PASSWORD_RESET_TOKEN_ENDPOINT,
-    GET_PERMISSON_LEVELS__ENDPOINT,
-    GET_USER_ENDPOINT,
-    LOGIN_ENDPOINT,
-    PASSWORD_RESET_ENDPOINT,
-    REGISTER_USER_ENDPOINT, REMOVE_USER_ENDPOINT, RESET_USER_PASSWORD_ENDPOINT,
-    SYNC_USER_LIST_ENDPOINT, UPDATE_USER_ENDPOINT,
-} from '../../config';
 import { GetSession } from '../../services/sessionManagement';
 import { decrypt, encrypt } from '../../services/encryptionServices';
 import app from '../../base';
 
+/**
+ * Application user authentication
+ * @param email
+ * @param password
+ * @returns {function(*): Promise<{data: {authenticated: boolean, role: string,
+ * phone: null, roleID: number, userName: string | null, userID: string, email: string | null,
+ * orgID: number, token: string},
+ * success: boolean, error: boolean}|{data: null, success: boolean, error: boolean}>}
+ */
 export const doLogin = (email, password) => async (dispatch) =>
 {
     let success = false;
 
+    // initial the firebase auth
     const auth = await app.auth();
 
     await app.auth().signInWithEmailAndPassword(email, password).then((user) =>
@@ -58,6 +54,7 @@ export const doLogin = (email, password) => async (dispatch) =>
             token         : user.uid,
         };
 
+        // save data to the redux store
         dispatch({
             type    : DO_LOGIN,
             payload : userObj,
@@ -71,6 +68,10 @@ export const doLogin = (email, password) => async (dispatch) =>
     }
 };
 
+/**
+ * Log out functionality
+ * @returns {function(*): void}
+ */
 export const doLogOut = () => (dispatch) =>
 {
     app.auth().signOut().then((r) =>

@@ -1,3 +1,8 @@
+/**
+ * Dealing with the session and handle session for the application
+ * @param obj
+ * @constructor
+ */
 export function SetSession(obj)
 {
     // eslint-disable-next-line no-param-reassign
@@ -28,6 +33,11 @@ export function SetSession(obj)
     cache = null;
 }
 
+/**
+ * get session data
+ * @returns {string|null}
+ * @constructor
+ */
 export function GetSession()
 {
     if (localStorage.getItem(process.env.REACT_APP_IDENTIFICATION_STORAGE) === null)
@@ -40,6 +50,10 @@ export function GetSession()
     }
 }
 
+/**
+ * destroy the session
+ * @constructor
+ */
 export function DestroySession()
 {
     localStorage.removeItem(process.env.REACT_APP_IDENTIFICATION_STORAGE);

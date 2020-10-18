@@ -38,6 +38,9 @@ import {
 import { DIALOG_NEW_SUPPLIER } from "../../redux/actionTypes";
 import RemoveConfirmDialog from "../../components/Dialogs/RemoveConfirmDialog";
 
+/**
+ * Supplier management component of the application
+ */
 class Suppliers extends React.Component
 {
     constructor(props)
