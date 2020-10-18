@@ -1,8 +1,12 @@
+/* eslint-disable react/jsx-one-expression-per-line,jsx-a11y/anchor-is-valid */
 import React from "react";
 
 // reactstrap components
 import { NavItem, NavLink, Nav, Container, Row, Col } from "reactstrap";
 
+/**
+ * login page footer
+ */
 class Login extends React.Component
 {
     constructor()

@@ -6,6 +6,7 @@ import Profile from "./views/examples/Profile";
 import Suppliers from "./views/examples/Suppliers";
 import Index from "./views/Index";
 
+// all the application routes are define in here
 const routes = [
     {
         path      : "/index",

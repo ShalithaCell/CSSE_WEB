@@ -1,5 +1,6 @@
 import { ITEM_APPEND } from "../actionTypes";
 
+// initial state
 const initialState = {
     items : [],
 };

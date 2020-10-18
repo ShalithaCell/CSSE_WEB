@@ -17,6 +17,9 @@ import {
 // core components
 import UserHeader from "../../components/Headers/UserHeader";
 
+/**
+ * profile management for the application
+ */
 class Profile extends React.Component
 {
     constructor()

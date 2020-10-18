@@ -19,20 +19,32 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e673d3c-e34d-4d15-aa18-c71353398034" name="Default Changelist" comment="finished order designs">
+    <list default="true" id="9e673d3c-e34d-4d15-aa18-c71353398034" name="Default Changelist" comment="code standards">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/brand/argon-react-white.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/brand/argon-react-white.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/brand/argon-react.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/brand/argon-react.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/brand/blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/brand/blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/brand/white.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/brand/white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/NewItemDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/NewItemDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/NewOrderDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/NewOrderDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/RemoveConfirmDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/RemoveConfirmDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/newSupplierDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/newSupplierDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footers/AdminFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footers/AdminFooter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Footers/AuthFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footers/AuthFooter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Headers/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Headers/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action/itemAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/itemAction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/action/orderAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/orderAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/systemReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/systemReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action/supplierAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/supplierAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action/userAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/userAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/itemReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/itemReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/examples/Tables.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/examples/Orders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/authenticationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/authenticationService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/encryptionServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/encryptionServices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/sessionManagement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/sessionManagement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/examples/Items.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/examples/Items.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/examples/Orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/examples/Orders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/examples/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/examples/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/examples/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/examples/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/examples/Suppliers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/examples/Suppliers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +145,7 @@
       <workItem from="1602944679890" duration="8000000" />
       <workItem from="1602990752199" duration="7543000" />
       <workItem from="1603000561316" duration="11985000" />
-      <workItem from="1603021011792" duration="12581000" />
+      <workItem from="1603021011792" duration="14433000" />
     </task>
     <task id="LOCAL-00001" summary="add git ignore">
       <created>1602651816258</created>
@@ -254,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603030723332</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="impl design">
+      <created>1603037593366</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1603037593366</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +306,9 @@
     <MESSAGE value="finished supplier CRUD" />
     <MESSAGE value="finished items CRUD" />
     <MESSAGE value="finished order designs" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished order designs" />
+    <MESSAGE value="impl design" />
+    <MESSAGE value="code standards" />
+    <option name="LAST_COMMIT_MESSAGE" value="code standards" />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="198" key="#Inspections" timestamp="1602820447740">
@@ -311,34 +332,34 @@
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602995310767" />
     <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602744680108" />
-    <state width="1899" height="163" key="GridCell.Tab.0.bottom" timestamp="1603027785905">
+    <state width="1899" height="163" key="GridCell.Tab.0.bottom" timestamp="1603039365170">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="163" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603027785905" />
+    <state width="1899" height="163" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603039365170" />
     <state width="1899" height="163" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603019302129" />
-    <state width="1899" height="163" key="GridCell.Tab.0.center" timestamp="1603027785905">
+    <state width="1899" height="163" key="GridCell.Tab.0.center" timestamp="1603039365169">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="163" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603027785905" />
+    <state width="1899" height="163" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603039365169" />
     <state width="1899" height="163" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603019302129" />
-    <state width="1899" height="163" key="GridCell.Tab.0.left" timestamp="1603027785905">
+    <state width="1899" height="163" key="GridCell.Tab.0.left" timestamp="1603039365169">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="163" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603027785905" />
+    <state width="1899" height="163" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603039365169" />
     <state width="1899" height="163" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603019302129" />
-    <state width="1899" height="163" key="GridCell.Tab.0.right" timestamp="1603027785905">
+    <state width="1899" height="163" key="GridCell.Tab.0.right" timestamp="1603039365169">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="163" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603027785905" />
+    <state width="1899" height="163" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603039365169" />
     <state width="1899" height="163" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603019302129" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1602904609787">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602904609787" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1603030724611">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1603037603883">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603030724611" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603037603883" />
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603009732337" />
     <state x="563" y="131" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602751068691">
       <screen x="0" y="0" width="1920" height="1040" />

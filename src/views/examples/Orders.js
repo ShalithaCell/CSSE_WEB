@@ -21,6 +21,9 @@ import { Button, ButtonToolbar } from 'rsuite';
 import { connect } from "react-redux";
 import Header from "../../components/Headers/Header";
 
+/**
+ * Orders handling component of te application
+ */
 class Orders extends React.Component
 {
     constructor()
@@ -48,16 +51,16 @@ class Orders extends React.Component
                                 <Table className='align-items-center table-flush' responsive>
                                     <thead className='thead-light'>
                                         <tr>
-                                    <th scope='col'>Reference No</th>
-                                    <th scope='col'>Budget</th>
-                                    <th scope='col'>Status</th>
-                                    <th scope='col'># of Items</th>
-                                    <th scope='col' />
-                                </tr>
+                                            <th scope='col'>Reference No</th>
+                                            <th scope='col'>Budget</th>
+                                            <th scope='col'>Status</th>
+                                            <th scope='col'># of Items</th>
+                                            <th scope='col' />
+                                        </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                    <th scope='row'>
+                                            <th scope='row'>
                                                 <Media className='align-items-center'>
                                                     <Media>
                                                         <span className='mb-0 text-sm'>
@@ -66,14 +69,14 @@ class Orders extends React.Component
                                                     </Media>
                                                 </Media>
                                             </th>
-                                    <td>Rs 3500000</td>
-                                    <td>
+                                            <td>Rs 3500000</td>
+                                            <td>
                                                 <Badge color='' className='badge-dot mr-4'>
                                                     <i className='bg-warning' />
                                                     pending
                                                 </Badge>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <Media className='align-items-center'>
                                                     <Media>
                                                         <span className='mb-0 text-sm'>
@@ -82,16 +85,16 @@ class Orders extends React.Component
                                                     </Media>
                                                 </Media>
                                             </td>
-                                    <td className='text-right'>
+                                            <td className='text-right'>
                                                 <ButtonToolbar>
                                                     <Button appearance='ghost'>View</Button>
                                                     <Button color='green'>Approve</Button>
                                                     <Button color='red'>Cancel</Button>
                                                 </ButtonToolbar>
                                             </td>
-                                </tr>
+                                        </tr>
                                         <tr>
-                                    <th scope='row'>
+                                            <th scope='row'>
                                                 <Media className='align-items-center'>
                                                     <Media>
                                                         <span className='mb-0 text-sm'>
@@ -100,14 +103,14 @@ class Orders extends React.Component
                                                     </Media>
                                                 </Media>
                                             </th>
-                                    <td>Rs 3500000</td>
-                                    <td>
+                                            <td>Rs 3500000</td>
+                                            <td>
                                                 <Badge color='' className='badge-dot mr-4'>
                                                     <i className='bg-warning' />
                                                     pending
                                                 </Badge>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <Media className='align-items-center'>
                                                     <Media>
                                                         <span className='mb-0 text-sm'>
@@ -116,16 +119,16 @@ class Orders extends React.Component
                                                     </Media>
                                                 </Media>
                                             </td>
-                                    <td className='text-right'>
+                                            <td className='text-right'>
                                                 <ButtonToolbar>
                                                     <Button appearance='ghost'>View</Button>
                                                     <Button color='green'>Approve</Button>
                                                     <Button color='red'>Cancel</Button>
                                                 </ButtonToolbar>
                                             </td>
-                                </tr>
+                                        </tr>
                                         <tr>
-                                    <th scope='row'>
+                                            <th scope='row'>
                                                 <Media className='align-items-center'>
                                                     <Media>
                                                         <span className='mb-0 text-sm'>
@@ -134,14 +137,14 @@ class Orders extends React.Component
                                                     </Media>
                                                 </Media>
                                             </th>
-                                    <td>Rs 3500000</td>
-                                    <td>
+                                            <td>Rs 3500000</td>
+                                            <td>
                                                 <Badge color='' className='badge-dot mr-4'>
                                                     <i className='bg-warning' />
                                                     pending
                                                 </Badge>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <Media className='align-items-center'>
                                                     <Media>
                                                         <span className='mb-0 text-sm'>
@@ -150,16 +153,16 @@ class Orders extends React.Component
                                                     </Media>
                                                 </Media>
                                             </td>
-                                    <td className='text-right'>
+                                            <td className='text-right'>
                                                 <ButtonToolbar>
                                                     <Button appearance='ghost'>View</Button>
                                                     <Button color='green'>Approve</Button>
                                                     <Button color='red'>Cancel</Button>
                                                 </ButtonToolbar>
                                             </td>
-                                </tr>
+                                        </tr>
                                         <tr>
-                                    <th scope='row'>
+                                            <th scope='row'>
                                                 <Media className='align-items-center'>
                                                     <Media>
                                                         <span className='mb-0 text-sm'>
@@ -168,14 +171,14 @@ class Orders extends React.Component
                                                     </Media>
                                                 </Media>
                                             </th>
-                                    <td>Rs 3500000</td>
-                                    <td>
+                                            <td>Rs 3500000</td>
+                                            <td>
                                                 <Badge color='' className='badge-dot mr-4'>
                                                     <i className='bg-warning' />
                                                     pending
                                                 </Badge>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <Media className='align-items-center'>
                                                     <Media>
                                                         <span className='mb-0 text-sm'>
@@ -184,16 +187,16 @@ class Orders extends React.Component
                                                     </Media>
                                                 </Media>
                                             </td>
-                                    <td className='text-right'>
+                                            <td className='text-right'>
                                                 <ButtonToolbar>
                                                     <Button appearance='ghost'>View</Button>
                                                     <Button color='green'>Approve</Button>
                                                     <Button color='red'>Cancel</Button>
                                                 </ButtonToolbar>
                                             </td>
-                                </tr>
+                                        </tr>
                                         <tr>
-                                    <th scope='row'>
+                                            <th scope='row'>
                                                 <Media className='align-items-center'>
                                                     <Media>
                                                         <span className='mb-0 text-sm'>
@@ -202,14 +205,14 @@ class Orders extends React.Component
                                                     </Media>
                                                 </Media>
                                             </th>
-                                    <td>Rs 3500000</td>
-                                    <td>
+                                            <td>Rs 3500000</td>
+                                            <td>
                                                 <Badge color='' className='badge-dot mr-4'>
                                                     <i className='bg-warning' />
                                                     pending
                                                 </Badge>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <Media className='align-items-center'>
                                                     <Media>
                                                         <span className='mb-0 text-sm'>
@@ -218,23 +221,23 @@ class Orders extends React.Component
                                                     </Media>
                                                 </Media>
                                             </td>
-                                    <td className='text-right'>
+                                            <td className='text-right'>
                                                 <ButtonToolbar>
                                                     <Button appearance='ghost'>View</Button>
                                                     <Button color='green'>Approve</Button>
                                                     <Button color='red'>Cancel</Button>
                                                 </ButtonToolbar>
                                             </td>
-                                </tr>
+                                        </tr>
                                     </tbody>
                                 </Table>
                                 <CardFooter className='py-4'>
                                     <nav aria-label='...'>
                                         <Pagination
-                                    className='pagination justify-content-end mb-0'
-                                    listClassName='justify-content-end mb-0'
-                                >
-                                    <PaginationItem className='disabled'>
+                                            className='pagination justify-content-end mb-0'
+                                            listClassName='justify-content-end mb-0'
+                                        >
+                                            <PaginationItem className='disabled'>
                                                 <PaginationLink
                                                     href='#pablo'
                                                     onClick={(e) => e.preventDefault()}
@@ -244,7 +247,7 @@ class Orders extends React.Component
                                                     <span className='sr-only'>Previous</span>
                                                 </PaginationLink>
                                             </PaginationItem>
-                                    <PaginationItem className='active'>
+                                            <PaginationItem className='active'>
                                                 <PaginationLink
                                                     href='#pablo'
                                                     onClick={(e) => e.preventDefault()}
@@ -252,7 +255,7 @@ class Orders extends React.Component
                                                     1
                                                 </PaginationLink>
                                             </PaginationItem>
-                                    <PaginationItem>
+                                            <PaginationItem>
                                                 <PaginationLink
                                                     href='#pablo'
                                                     onClick={(e) => e.preventDefault()}
@@ -262,7 +265,7 @@ class Orders extends React.Component
                                                     <span className='sr-only'>(current)</span>
                                                 </PaginationLink>
                                             </PaginationItem>
-                                    <PaginationItem>
+                                            <PaginationItem>
                                                 <PaginationLink
                                                     href='#pablo'
                                                     onClick={(e) => e.preventDefault()}
@@ -270,7 +273,7 @@ class Orders extends React.Component
                                                     3
                                                 </PaginationLink>
                                             </PaginationItem>
-                                    <PaginationItem>
+                                            <PaginationItem>
                                                 <PaginationLink
                                                     href='#pablo'
                                                     onClick={(e) => e.preventDefault()}
@@ -279,7 +282,7 @@ class Orders extends React.Component
                                                     <span className='sr-only'>Next</span>
                                                 </PaginationLink>
                                             </PaginationItem>
-                                </Pagination>
+                                        </Pagination>
                                     </nav>
                                 </CardFooter>
                             </Card>
@@ -294,17 +297,17 @@ class Orders extends React.Component
                                 <Table className='align-items-center table-flush' responsive>
                                     <thead className='thead-light'>
                                         <tr>
-                                    <th scope='col'>Reference No</th>
-                                    <th scope='col'>Budget</th>
-                                    <th scope='col'>Status</th>
-                                    <th scope='col'># of Items</th>
-                                    <th scope='col'>Shipping Status</th>
-                                    <th scope='col' />
-                                </tr>
+                                            <th scope='col'>Reference No</th>
+                                            <th scope='col'>Budget</th>
+                                            <th scope='col'>Status</th>
+                                            <th scope='col'># of Items</th>
+                                            <th scope='col'>Shipping Status</th>
+                                            <th scope='col' />
+                                        </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                    <th scope='row'>
+                                            <th scope='row'>
                                                 <Media className='align-items-center'>
                                                     <Media>
                                                         <span className='mb-0 text-sm'>
@@ -313,21 +316,21 @@ class Orders extends React.Component
                                                     </Media>
                                                 </Media>
                                             </th>
-                                    <td>$4,400 USD</td>
-                                    <td>
+                                            <td>$4,400 USD</td>
+                                            <td>
                                                 <Badge color='' className='badge-dot'>
                                                     <i className='bg-success' />
                                                     Approved
                                                 </Badge>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <Media>
                                                     <span className='mb-0 text-sm'>
                                                         10
                                                     </span>
                                                 </Media>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <div className='d-flex align-items-center'>
                                                     <span className='mr-2'>Shipped</span>
                                                     <div>
@@ -339,14 +342,14 @@ class Orders extends React.Component
                                                     </div>
                                                 </div>
                                             </td>
-                                    <td className='text-right'>
+                                            <td className='text-right'>
                                                 <ButtonToolbar>
                                                     <Button appearance='ghost'>View</Button>
                                                 </ButtonToolbar>
                                             </td>
-                                </tr>
+                                        </tr>
                                         <tr>
-                                    <th scope='row'>
+                                            <th scope='row'>
                                                 <Media className='align-items-center'>
                                                     <Media>
                                                         <span className='mb-0 text-sm'>
@@ -355,21 +358,21 @@ class Orders extends React.Component
                                                     </Media>
                                                 </Media>
                                             </th>
-                                    <td>$4,400 USD</td>
-                                    <td>
+                                            <td>$4,400 USD</td>
+                                            <td>
                                                 <Badge color='' className='badge-dot'>
                                                     <i className='bg-success' />
                                                     Approved
                                                 </Badge>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <Media>
                                                     <span className='mb-0 text-sm'>
                                                         10
                                                     </span>
                                                 </Media>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <div className='d-flex align-items-center'>
                                                     <span className='mr-2'>Shipped</span>
                                                     <div>
@@ -381,14 +384,14 @@ class Orders extends React.Component
                                                     </div>
                                                 </div>
                                             </td>
-                                    <td className='text-right'>
+                                            <td className='text-right'>
                                                 <ButtonToolbar>
                                                     <Button appearance='ghost'>View</Button>
                                                 </ButtonToolbar>
                                             </td>
-                                </tr>
+                                        </tr>
                                         <tr>
-                                    <th scope='row'>
+                                            <th scope='row'>
                                                 <Media className='align-items-center'>
                                                     <Media>
                                                         <span className='mb-0 text-sm'>
@@ -397,21 +400,21 @@ class Orders extends React.Component
                                                     </Media>
                                                 </Media>
                                             </th>
-                                    <td>$4,400 USD</td>
-                                    <td>
+                                            <td>$4,400 USD</td>
+                                            <td>
                                                 <Badge color='' className='badge-dot'>
                                                     <i className='bg-success' />
                                                     Approved
                                                 </Badge>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <Media>
                                                     <span className='mb-0 text-sm'>
                                                         10
                                                     </span>
                                                 </Media>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <div className='d-flex align-items-center'>
                                                     <span className='mr-2'>Shipped</span>
                                                     <div>
@@ -423,14 +426,14 @@ class Orders extends React.Component
                                                     </div>
                                                 </div>
                                             </td>
-                                    <td className='text-right'>
+                                            <td className='text-right'>
                                                 <ButtonToolbar>
                                                     <Button appearance='ghost'>View</Button>
                                                 </ButtonToolbar>
                                             </td>
-                                </tr>
+                                        </tr>
                                         <tr>
-                                    <th scope='row'>
+                                            <th scope='row'>
                                                 <Media className='align-items-center'>
                                                     <Media>
                                                         <span className='mb-0 text-sm'>
@@ -439,21 +442,21 @@ class Orders extends React.Component
                                                     </Media>
                                                 </Media>
                                             </th>
-                                    <td>$4,400 USD</td>
-                                    <td>
+                                            <td>$4,400 USD</td>
+                                            <td>
                                                 <Badge color='' className='badge-dot'>
                                                     <i className='bg-success' />
                                                     Approved
                                                 </Badge>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <Media>
                                                     <span className='mb-0 text-sm'>
                                                         10
                                                     </span>
                                                 </Media>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <div className='d-flex align-items-center'>
                                                     <span className='mr-2'>Shipped</span>
                                                     <div>
@@ -465,14 +468,14 @@ class Orders extends React.Component
                                                     </div>
                                                 </div>
                                             </td>
-                                    <td className='text-right'>
+                                            <td className='text-right'>
                                                 <ButtonToolbar>
                                                     <Button appearance='ghost'>View</Button>
                                                 </ButtonToolbar>
                                             </td>
-                                </tr>
+                                        </tr>
                                         <tr>
-                                    <th scope='row'>
+                                            <th scope='row'>
                                                 <Media className='align-items-center'>
                                                     <Media>
                                                         <span className='mb-0 text-sm'>
@@ -481,21 +484,21 @@ class Orders extends React.Component
                                                     </Media>
                                                 </Media>
                                             </th>
-                                    <td>$4,400 USD</td>
-                                    <td>
+                                            <td>$4,400 USD</td>
+                                            <td>
                                                 <Badge color='' className='badge-dot'>
                                                     <i className='bg-success' />
                                                     Approved
                                                 </Badge>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <Media>
                                                     <span className='mb-0 text-sm'>
                                                         10
                                                     </span>
                                                 </Media>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <div className='d-flex align-items-center'>
                                                     <span className='mr-2'>Shipped</span>
                                                     <div>
@@ -507,21 +510,21 @@ class Orders extends React.Component
                                                     </div>
                                                 </div>
                                             </td>
-                                    <td className='text-right'>
+                                            <td className='text-right'>
                                                 <ButtonToolbar>
                                                     <Button appearance='ghost'>View</Button>
                                                 </ButtonToolbar>
                                             </td>
-                                </tr>
+                                        </tr>
                                     </tbody>
                                 </Table>
                                 <CardFooter className='py-4'>
                                     <nav aria-label='...'>
                                         <Pagination
-                                    className='pagination justify-content-end mb-0'
-                                    listClassName='justify-content-end mb-0'
-                                >
-                                    <PaginationItem className='disabled'>
+                                            className='pagination justify-content-end mb-0'
+                                            listClassName='justify-content-end mb-0'
+                                        >
+                                            <PaginationItem className='disabled'>
                                                 <PaginationLink
                                                     href='#pablo'
                                                     onClick={(e) => e.preventDefault()}
@@ -531,7 +534,7 @@ class Orders extends React.Component
                                                     <span className='sr-only'>Previous</span>
                                                 </PaginationLink>
                                             </PaginationItem>
-                                    <PaginationItem className='active'>
+                                            <PaginationItem className='active'>
                                                 <PaginationLink
                                                     href='#pablo'
                                                     onClick={(e) => e.preventDefault()}
@@ -539,7 +542,7 @@ class Orders extends React.Component
                                                     1
                                                 </PaginationLink>
                                             </PaginationItem>
-                                    <PaginationItem>
+                                            <PaginationItem>
                                                 <PaginationLink
                                                     href='#pablo'
                                                     onClick={(e) => e.preventDefault()}
@@ -549,7 +552,7 @@ class Orders extends React.Component
                                                     <span className='sr-only'>(current)</span>
                                                 </PaginationLink>
                                             </PaginationItem>
-                                    <PaginationItem>
+                                            <PaginationItem>
                                                 <PaginationLink
                                                     href='#pablo'
                                                     onClick={(e) => e.preventDefault()}
@@ -557,7 +560,7 @@ class Orders extends React.Component
                                                     3
                                                 </PaginationLink>
                                             </PaginationItem>
-                                    <PaginationItem>
+                                            <PaginationItem>
                                                 <PaginationLink
                                                     href='#pablo'
                                                     onClick={(e) => e.preventDefault()}
@@ -566,7 +569,7 @@ class Orders extends React.Component
                                                     <span className='sr-only'>Next</span>
                                                 </PaginationLink>
                                             </PaginationItem>
-                                </Pagination>
+                                        </Pagination>
                                     </nav>
                                 </CardFooter>
                             </Card>
@@ -581,17 +584,17 @@ class Orders extends React.Component
                                 <Table className='align-items-center table-flush' responsive>
                                     <thead className='thead-light'>
                                         <tr>
-                                    <th scope='col'>Reference No</th>
-                                    <th scope='col'>Budget</th>
-                                    <th scope='col'>Status</th>
-                                    <th scope='col'># of Items</th>
-                                    <th scope='col'>Shipping Status</th>
-                                    <th scope='col' />
-                                </tr>
+                                            <th scope='col'>Reference No</th>
+                                            <th scope='col'>Budget</th>
+                                            <th scope='col'>Status</th>
+                                            <th scope='col'># of Items</th>
+                                            <th scope='col'>Shipping Status</th>
+                                            <th scope='col' />
+                                        </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                    <th scope='row'>
+                                            <th scope='row'>
                                                 <Media className='align-items-center'>
                                                     <Media>
                                                         <span className='mb-0 text-sm'>
@@ -600,21 +603,21 @@ class Orders extends React.Component
                                                     </Media>
                                                 </Media>
                                             </th>
-                                    <td>$4,400 USD</td>
-                                    <td>
+                                            <td>$4,400 USD</td>
+                                            <td>
                                                 <Badge color='' className='badge-dot'>
                                                     <i className='bg-info' />
                                                     Complete
                                                 </Badge>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <Media>
                                                     <span className='mb-0 text-sm'>
                                                         10
                                                     </span>
                                                 </Media>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <div className='d-flex align-items-center'>
                                                     <span className='mr-2'>Delivered</span>
                                                     <div>
@@ -626,14 +629,14 @@ class Orders extends React.Component
                                                     </div>
                                                 </div>
                                             </td>
-                                    <td className='text-right'>
+                                            <td className='text-right'>
                                                 <ButtonToolbar>
                                                     <Button appearance='ghost'>View</Button>
                                                 </ButtonToolbar>
                                             </td>
-                                </tr>
+                                        </tr>
                                         <tr>
-                                    <th scope='row'>
+                                            <th scope='row'>
                                                 <Media className='align-items-center'>
                                                     <Media>
                                                         <span className='mb-0 text-sm'>
@@ -642,21 +645,21 @@ class Orders extends React.Component
                                                     </Media>
                                                 </Media>
                                             </th>
-                                    <td>$4,400 USD</td>
-                                    <td>
+                                            <td>$4,400 USD</td>
+                                            <td>
                                                 <Badge color='' className='badge-dot'>
                                                     <i className='bg-info' />
                                                     Complete
                                                 </Badge>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <Media>
                                                     <span className='mb-0 text-sm'>
                                                         10
                                                     </span>
                                                 </Media>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <div className='d-flex align-items-center'>
                                                     <span className='mr-2'>Delivered</span>
                                                     <div>
@@ -668,14 +671,14 @@ class Orders extends React.Component
                                                     </div>
                                                 </div>
                                             </td>
-                                    <td className='text-right'>
+                                            <td className='text-right'>
                                                 <ButtonToolbar>
                                                     <Button appearance='ghost'>View</Button>
                                                 </ButtonToolbar>
                                             </td>
-                                </tr>
+                                        </tr>
                                         <tr>
-                                    <th scope='row'>
+                                            <th scope='row'>
                                                 <Media className='align-items-center'>
                                                     <Media>
                                                         <span className='mb-0 text-sm'>
@@ -684,21 +687,21 @@ class Orders extends React.Component
                                                     </Media>
                                                 </Media>
                                             </th>
-                                    <td>$4,400 USD</td>
-                                    <td>
+                                            <td>$4,400 USD</td>
+                                            <td>
                                                 <Badge color='' className='badge-dot'>
                                                     <i className='bg-info' />
                                                     Complete
                                                 </Badge>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <Media>
                                                     <span className='mb-0 text-sm'>
                                                         10
                                                     </span>
                                                 </Media>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <div className='d-flex align-items-center'>
                                                     <span className='mr-2'>Delivered</span>
                                                     <div>
@@ -710,14 +713,14 @@ class Orders extends React.Component
                                                     </div>
                                                 </div>
                                             </td>
-                                    <td className='text-right'>
+                                            <td className='text-right'>
                                                 <ButtonToolbar>
                                                     <Button appearance='ghost'>View</Button>
                                                 </ButtonToolbar>
                                             </td>
-                                </tr>
+                                        </tr>
                                         <tr>
-                                    <th scope='row'>
+                                            <th scope='row'>
                                                 <Media className='align-items-center'>
                                                     <Media>
                                                         <span className='mb-0 text-sm'>
@@ -726,21 +729,21 @@ class Orders extends React.Component
                                                     </Media>
                                                 </Media>
                                             </th>
-                                    <td>$4,400 USD</td>
-                                    <td>
+                                            <td>$4,400 USD</td>
+                                            <td>
                                                 <Badge color='' className='badge-dot'>
                                                     <i className='bg-info' />
                                                     Complete
                                                 </Badge>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <Media>
                                                     <span className='mb-0 text-sm'>
                                                         10
                                                     </span>
                                                 </Media>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <div className='d-flex align-items-center'>
                                                     <span className='mr-2'>Delivered</span>
                                                     <div>
@@ -752,14 +755,14 @@ class Orders extends React.Component
                                                     </div>
                                                 </div>
                                             </td>
-                                    <td className='text-right'>
+                                            <td className='text-right'>
                                                 <ButtonToolbar>
                                                     <Button appearance='ghost'>View</Button>
                                                 </ButtonToolbar>
                                             </td>
-                                </tr>
+                                        </tr>
                                         <tr>
-                                    <th scope='row'>
+                                            <th scope='row'>
                                                 <Media className='align-items-center'>
                                                     <Media>
                                                         <span className='mb-0 text-sm'>
@@ -768,21 +771,21 @@ class Orders extends React.Component
                                                     </Media>
                                                 </Media>
                                             </th>
-                                    <td>$4,400 USD</td>
-                                    <td>
+                                            <td>$4,400 USD</td>
+                                            <td>
                                                 <Badge color='' className='badge-dot'>
                                                     <i className='bg-info' />
                                                     Complete
                                                 </Badge>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <Media>
                                                     <span className='mb-0 text-sm'>
                                                         10
                                                     </span>
                                                 </Media>
                                             </td>
-                                    <td>
+                                            <td>
                                                 <div className='d-flex align-items-center'>
                                                     <span className='mr-2'>Delivered</span>
                                                     <div>
@@ -794,21 +797,21 @@ class Orders extends React.Component
                                                     </div>
                                                 </div>
                                             </td>
-                                    <td className='text-right'>
+                                            <td className='text-right'>
                                                 <ButtonToolbar>
                                                     <Button appearance='ghost'>View</Button>
                                                 </ButtonToolbar>
                                             </td>
-                                </tr>
+                                        </tr>
                                     </tbody>
                                 </Table>
                                 <CardFooter className='py-4'>
                                     <nav aria-label='...'>
                                         <Pagination
-                                    className='pagination justify-content-end mb-0'
-                                    listClassName='justify-content-end mb-0'
-                                >
-                                    <PaginationItem className='disabled'>
+                                            className='pagination justify-content-end mb-0'
+                                            listClassName='justify-content-end mb-0'
+                                        >
+                                            <PaginationItem className='disabled'>
                                                 <PaginationLink
                                                     href='#pablo'
                                                     onClick={(e) => e.preventDefault()}
@@ -818,7 +821,7 @@ class Orders extends React.Component
                                                     <span className='sr-only'>Previous</span>
                                                 </PaginationLink>
                                             </PaginationItem>
-                                    <PaginationItem className='active'>
+                                            <PaginationItem className='active'>
                                                 <PaginationLink
                                                     href='#pablo'
                                                     onClick={(e) => e.preventDefault()}
@@ -826,7 +829,7 @@ class Orders extends React.Component
                                                     1
                                                 </PaginationLink>
                                             </PaginationItem>
-                                    <PaginationItem>
+                                            <PaginationItem>
                                                 <PaginationLink
                                                     href='#pablo'
                                                     onClick={(e) => e.preventDefault()}
@@ -836,7 +839,7 @@ class Orders extends React.Component
                                                     <span className='sr-only'>(current)</span>
                                                 </PaginationLink>
                                             </PaginationItem>
-                                    <PaginationItem>
+                                            <PaginationItem>
                                                 <PaginationLink
                                                     href='#pablo'
                                                     onClick={(e) => e.preventDefault()}
@@ -844,7 +847,7 @@ class Orders extends React.Component
                                                     3
                                                 </PaginationLink>
                                             </PaginationItem>
-                                    <PaginationItem>
+                                            <PaginationItem>
                                                 <PaginationLink
                                                     href='#pablo'
                                                     onClick={(e) => e.preventDefault()}
@@ -853,7 +856,7 @@ class Orders extends React.Component
                                                     <span className='sr-only'>Next</span>
                                                 </PaginationLink>
                                             </PaginationItem>
-                                </Pagination>
+                                        </Pagination>
                                     </nav>
                                 </CardFooter>
                             </Card>

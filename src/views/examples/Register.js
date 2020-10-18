@@ -17,6 +17,9 @@ import {
     Col,
 } from "reactstrap";
 
+/**
+ * user registration component of the application
+ */
 class Register extends React.Component
 {
     constructor()

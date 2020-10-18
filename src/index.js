@@ -13,6 +13,9 @@ import Auth from "./layouts/Auth";
 import store from "./redux/store";
 import App from "./App";
 
+/**
+ * All the application infrastructure are based on here
+ */
 ReactDOM.render(
     <Provider store={store}>
         <App />

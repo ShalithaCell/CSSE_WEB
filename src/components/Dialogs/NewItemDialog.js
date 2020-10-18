@@ -14,10 +14,18 @@ import {
     fetchItems,
 } from "../../redux/action/itemAction";
 
+/**
+ * item add dialog
+ * @param props
+ * @returns {JSX.Element}
+ * @constructor
+ */
 function NewItemDialog(props)
 {
+    // dialog enabled
     const { isEnable } = props;
 
+    // initial items
     const [ item, setItem ] = useState({
         name      : '',
         qty       : '',
@@ -27,10 +35,12 @@ function NewItemDialog(props)
         docID     : null,
     });
 
+    // suppliers
     const [ supplierList, setSupplierList ] = useState({
         list : [],
     });
 
+    // selected suppliers
     const [ selectedSupplier, setSelectedSupplier ] = useState(null);
 
     useEffect(() =>
@@ -75,6 +85,10 @@ function NewItemDialog(props)
         setSupplierList({ list: objSuppliers });
     }
 
+    /**
+     * handle text changing events
+     * @param e
+     */
     function handleOnTextChange(e)
     {
         e.preventDefault();
@@ -87,8 +101,13 @@ function NewItemDialog(props)
         );
     }
 
+    /**
+     * validating and saving functionality
+     * @returns {Promise<void>}
+     */
     async function handleSaving()
     {
+        // object to be saved in database
         const fireStoreObject = {
             availability : true,
             supplier     : selectedSupplier,
@@ -97,6 +116,7 @@ function NewItemDialog(props)
             name         : item.name,
         };
 
+        // check this is in the edit mode or not
         if (props.editID === null)
         {
             await props.addNewItem(fireStoreObject);
@@ -106,7 +126,9 @@ function NewItemDialog(props)
             // await props.updateSupplier(fireStoreObject, supplier.docID);
         }
 
+        // dialog closing
         props.handleItemAddDialogStatus(false, null);
+        // refresh the items
         props.fetchItems();
     }
 
