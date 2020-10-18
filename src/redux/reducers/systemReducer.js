@@ -5,6 +5,7 @@ import {
     SET_SESSION_EXPIRED,
     UPDATE_USER_NAME_LIST,
     DIALOG_NEW_SUPPLIER, DIALOG_NEW_ITEM, DIALOG_NEW_ORDER,
+    VIEW_ORDER_TYPE,
 } from '../actionTypes';
 
 const initialState = {
@@ -19,6 +20,7 @@ const initialState = {
     ItemEditableID      : null,
     newOrderDialog      : false,
     orderEditableID     : null,
+    viewOrdersType      : 1,
 };
 
 export default function(state = initialState, action)
@@ -67,6 +69,11 @@ export default function(state = initialState, action)
                 ...state,
                 newOrderDialog  : action.payload.action,
                 orderEditableID : action.payload.editID,
+            };
+        case VIEW_ORDER_TYPE:
+            return {
+                ...state,
+                viewOrdersType : action.payload,
             };
         default:
             return state;

@@ -1,6 +1,6 @@
 import Register from "./views/examples/Register";
 import Login from "./views/examples/Login";
-import Tables from "./views/examples/Tables";
+import Orders from "./views/examples/Orders";
 import Items from "./views/examples/Items";
 import Profile from "./views/examples/Profile";
 import Suppliers from "./views/examples/Suppliers";
@@ -36,10 +36,10 @@ const routes = [
         layout    : "/admin",
     },
     {
-        path      : "/tables",
-        name      : "Tables",
+        path      : "/orders",
+        name      : "Orders",
         icon      : "ni ni-bullet-list-67 text-red",
-        component : Tables,
+        component : Orders,
         layout    : "/admin",
     },
     {
