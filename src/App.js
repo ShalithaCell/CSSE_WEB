@@ -10,6 +10,7 @@ import { setUserState } from "./redux/action/userAction";
 import 'rsuite/dist/styles/rsuite-default.css';
 import NewSupplierDialog from "./components/Dialogs/newSupplierDialog";
 import NewItemDialog from "./components/Dialogs/NewItemDialog";
+import NewOrderDialog from "./components/Dialogs/NewOrderDialog";
 
 class App extends Component
 {
@@ -37,6 +38,7 @@ class App extends Component
                     </Switch>}
                 <NewSupplierDialog />
                 <NewItemDialog />
+                <NewOrderDialog />
             </BrowserRouter>
         );
     }

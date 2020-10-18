@@ -39,6 +39,7 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "@date-io/date-fns": "^2.10.6",
     "@fortawesome/fontawesome-free": "5.12.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
@@ -48,9 +49,11 @@
     "@material-ui/core": "^4.9.7",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.47",
+    "@material-ui/pickers": "^3.2.10",
     "chart.js": "2.9.3",
     "classnames": "2.2.6",
     "crypto-js": "^4.0.0",
+    "date-fns": "^2.16.1",
     "dotenv": "8.2.0",
     "firebase": "^7.23.0",
     "formik": "^2.1.4",
