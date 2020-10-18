@@ -38,7 +38,7 @@ import {
 import { DIALOG_NEW_SUPPLIER } from "../../redux/actionTypes";
 import RemoveConfirmDialog from "../../components/Dialogs/RemoveConfirmDialog";
 
-class Maps extends React.Component
+class Suppliers extends React.Component
 {
     constructor(props)
     {
@@ -164,4 +164,4 @@ export default connect(
         fetchSuppliers,
         removeSupplier,
     },
-)(Maps);
+)(Suppliers);

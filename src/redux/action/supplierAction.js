@@ -9,7 +9,7 @@ export const fetchSuppliers = () => async (dispatch) =>
         payload : null,
     });
 
-    app().firestore().collection(DATABASE_COLLECTION_SUPPLIER).get()
+    await app().firestore().collection(DATABASE_COLLECTION_SUPPLIER).get()
         .then((snapShot) =>
         {
             snapShot.forEach((doc) =>
