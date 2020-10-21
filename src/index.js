@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import "./assets/plugins/nucleo/css/nucleo.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./assets/scss/argon-dashboard-react.scss";
+import 'react-toastify/dist/ReactToastify.css';
 
 import { Provider } from "react-redux";
 import Admin from "./layouts/Admin";

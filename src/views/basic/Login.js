@@ -20,11 +20,11 @@ import {
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { connect } from "react-redux";
-import { doLogin } from "../../redux/action/userAction";
+import { doLogin } from "../../redux/action/UserAction";
 
 import githubImg from '../../assets/img/icons/common/github.svg';
 import googleImg from '../../assets/img/icons/common/google.svg';
-import { SetSession } from "../../services/sessionManagement";
+import { SetSession } from "../../services/SessionManagement";
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Login extends React.Component

@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import store from '../redux/store';
-import { decrypt } from "./encryptionServices";
-import { GetSession, DestroySession, SetSession } from './sessionManagement';
+import { decrypt } from "./EncryptionServices";
+import { GetSession, DestroySession, SetSession } from './SessionManagement';
 
 /**
  * Check is the application already authenticated or not

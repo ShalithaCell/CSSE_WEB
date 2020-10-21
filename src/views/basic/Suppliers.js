@@ -34,7 +34,7 @@ import {
     fetchSuppliers,
     handleSupplierAddDialogStatus,
     removeSupplier,
-} from "../../redux/action/supplierAction";
+} from "../../redux/action/SupplierAction";
 import { DIALOG_NEW_SUPPLIER } from "../../redux/actionTypes";
 import RemoveConfirmDialog from "../../components/Dialogs/RemoveConfirmDialog";
 

@@ -1,5 +1,5 @@
 import { DO_LOGIN, DO_LOGOUT, UPDATE_USER_LIST } from '../actionTypes';
-import { encrypt } from "../../services/encryptionServices";
+import { encrypt } from "../../services/EncryptionServices";
 
 const initialState = {
     authenticated : false,
