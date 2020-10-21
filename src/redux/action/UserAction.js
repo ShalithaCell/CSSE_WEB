@@ -2,8 +2,8 @@ import {
     DO_LOGIN,
     DO_LOGOUT,
 } from '../actionTypes';
-import { GetSession } from '../../services/sessionManagement';
-import { decrypt, encrypt } from '../../services/encryptionServices';
+import { GetSession } from '../../services/SessionManagement';
+import { decrypt, encrypt } from '../../services/EncryptionServices';
 import app from '../../base';
 
 /**

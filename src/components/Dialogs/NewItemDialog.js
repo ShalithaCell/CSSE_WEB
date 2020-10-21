@@ -12,7 +12,7 @@ import {
     handleItemAddDialogStatus,
     addNewItem,
     fetchItems,
-} from "../../redux/action/itemAction";
+} from "../../redux/action/ItemAction";
 
 /**
  * item add dialog

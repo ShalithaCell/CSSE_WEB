@@ -5,10 +5,10 @@ import { connect } from "react-redux";
 import Admin from "./layouts/Admin";
 import Auth from "./layouts/Auth";
 import './assets/css/style-custom.css';
-import IsAuthenticated from "./services/authenticationService";
-import { setUserState } from "./redux/action/userAction";
+import IsAuthenticated from "./services/AuthenticationService";
+import { setUserState } from "./redux/action/UserAction";
 import 'rsuite/dist/styles/rsuite-default.css';
-import NewSupplierDialog from "./components/Dialogs/newSupplierDialog";
+import NewSupplierDialog from "./components/Dialogs/NewSupplierDialog";
 import NewItemDialog from "./components/Dialogs/NewItemDialog";
 import NewOrderDialog from "./components/Dialogs/NewOrderDialog";
 

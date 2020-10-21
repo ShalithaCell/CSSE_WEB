@@ -12,7 +12,7 @@ import { handleSupplierAddDialogStatus,
     addNewSupplier,
     fetchSuppliers,
     updateSupplier,
-} from "../../redux/action/supplierAction";
+} from "../../redux/action/SupplierAction";
 
 /**
  * add new supplier dialog
