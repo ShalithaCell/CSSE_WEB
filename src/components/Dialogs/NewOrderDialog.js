@@ -42,10 +42,7 @@ function NewOrderDialog(props)
 
     const [ netAmount, setNetAmount ] = useState(0);
 
-    const [ orderItems, setOrderItems ] = useState([
-        { item: 'cement', supplier: 'ABC Store', qty: 200, amount: 0, unitPrice: 200 },
-        { item: 'Blocks', supplier: 'ABC Store', qty: 1000, amount: 0, unitPrice: 200 },
-    ]);
+    const [ orderItems, setOrderItems ] = useState([]);
 
     const [ qty, setQty ] = useState([]);
 
@@ -71,7 +68,33 @@ function NewOrderDialog(props)
 
     function addToCart(rowData)
     {
+        let selectedQty = 0;
+        if (qty.hasOwnProperty(rowData.id))
+        {
+            selectedQty = Number(qty[rowData.id]);
+        }
+        else
+        {
+            return;
+        }
 
+        const amount = selectedQty * Number(rowData.unitPrice);
+
+        setNetAmount(netAmount + amount);
+
+        const cartObj = {
+            item       : rowData.name,
+            supplier   : rowData.supplierName,
+            supplierID : rowData.supplier,
+            unitPrice  : rowData.unitPrice,
+            qty        : selectedQty,
+            amount,
+        };
+
+        setOrderItems([
+            ...orderItems,
+            cartObj,
+        ]);
     }
 
     return (
@@ -175,7 +198,7 @@ function NewOrderDialog(props)
                                         margin='normal'
                                         id='date-picker-inline'
                                         label='Select Deliver Date'
-                                        // value={selectedDate}
+                                        value={Date.now()}
                                         // onChange={handleDateChange}
                                         KeyboardButtonProps={{
                                             'aria-label' : 'change date',
