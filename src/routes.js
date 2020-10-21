@@ -1,9 +1,9 @@
-import Register from "./views/examples/Register";
-import Login from "./views/examples/Login";
-import Orders from "./views/examples/Orders";
-import Items from "./views/examples/Items";
-import Profile from "./views/examples/Profile";
-import Suppliers from "./views/examples/Suppliers";
+import Register from "./views/basic/Register";
+import Login from "./views/basic/Login";
+import Orders from "./views/basic/Orders";
+import Items from "./views/basic/Items";
+import Profile from "./views/basic/Profile";
+import Suppliers from "./views/basic/Suppliers";
 import Index from "./views/Index";
 
 // all the application routes are define in here

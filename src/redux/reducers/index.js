@@ -3,6 +3,7 @@ import userReducer from "./userReducer";
 import systemReducer from "./systemReducer";
 import supplierReducer from "./supplierReducer";
 import itemReducer from "./itemReducer";
+import configurationReducer from "./configurationReducer";
 
 /**
  * all the reducers are combine together and export
@@ -19,10 +20,11 @@ import itemReducer from "./itemReducer";
  */
 const reducers = combineReducers(
     {
-        user     : userReducer,
-        system   : systemReducer,
-        supplier : supplierReducer,
-        items    : itemReducer,
+        user           : userReducer,
+        system         : systemReducer,
+        supplier       : supplierReducer,
+        items          : itemReducer,
+        configurations : configurationReducer,
     },
 );
 

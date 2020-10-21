@@ -4,7 +4,7 @@ import React from "react";
 // reactstrap components
 import { Card, CardBody, CardTitle, Container, Row, Col } from "reactstrap";
 import { connect } from "react-redux";
-import { handleNewOrderDialogStatus, handleViewOrderType } from "../../redux/action/orderAction";
+import { handleNewOrderDialogStatus, handleViewOrderType } from "../../redux/action/OrderAction";
 import ViewOrderEnum from "../../redux/actionTypes";
 
 class Header extends React.Component

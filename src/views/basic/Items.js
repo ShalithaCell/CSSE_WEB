@@ -19,9 +19,9 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import MaterialTable from "material-table";
 import { connect } from "react-redux";
 import Header from "../../components/Headers/Header";
-import { fetchItems, handleItemAddDialogStatus } from "../../redux/action/itemAction";
-import { fetchSuppliers } from "../../redux/action/supplierAction";
-import NewSupplierDialog from "../../components/Dialogs/newSupplierDialog";
+import { fetchItems, handleItemAddDialogStatus } from "../../redux/action/ItemAction";
+import { fetchSuppliers } from "../../redux/action/SupplierAction";
+import NewSupplierDialog from "../../components/Dialogs/NewSupplierDialog";
 
 /**
  * Component for handle Items of the system

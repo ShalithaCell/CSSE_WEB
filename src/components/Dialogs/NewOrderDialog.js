@@ -1,4 +1,4 @@
-/* eslint-disable consistent-return,no-plusplus,react/destructuring-assignment,max-len */
+/* eslint-disable consistent-return,no-plusplus,react/destructuring-assignment,max-len,array-callback-return */
 import React, { useState, useEffect } from 'react';
 import { connect } from "react-redux";
 import Dialog from "@material-ui/core/Dialog";
@@ -11,11 +11,13 @@ import { Button } from 'rsuite';
 import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
 import MaterialTable from "material-table";
 import DateFnsUtils from '@date-io/date-fns';
+import { ToastContainer, toast } from 'react-toastify';
 import {
     fetchItems,
-} from "../../redux/action/itemAction";
-import { handleNewOrderDialogStatus } from "../../redux/action/orderAction";
-import { fetchSuppliers } from "../../redux/action/supplierAction";
+} from "../../redux/action/ItemAction";
+import { handleNewOrderDialogStatus, addNewOrder } from "../../redux/action/OrderAction";
+import { fetchSuppliers } from "../../redux/action/SupplierAction";
+import syncConfigurations from "../../redux/action/ConfigurationActions";
 import 'date-fns';
 
 /**
@@ -26,9 +28,9 @@ import 'date-fns';
  */
 function NewOrderDialog(props)
 {
-    const { isEnable } = props;
+    const { isEnable, configurations } = props;
 
-    // initial state
+    // initial state for items
     const [ item, setItem ] = useState({
         name      : '',
         qty       : '',
@@ -38,18 +40,30 @@ function NewOrderDialog(props)
         docID     : null,
     });
 
+    // order reference id
     const [ orderID, setOrderID ] = useState(null);
 
+    // order net amount
     const [ netAmount, setNetAmount ] = useState(0);
 
+    // cart details
     const [ orderItems, setOrderItems ] = useState([]);
 
+    // qty object array
     const [ qty, setQty ] = useState([]);
+
+    // address
+    const [ address, setAddress ] = useState('');
+
+    // due date
+    const [ dueDate, setDueDate ] = useState(Date.now);
 
     useEffect(() =>
     {
         // set order id
         setOrderID(Date.now());
+
+        props.syncConfigurations();
 
         async function fetchData()
         {
@@ -66,23 +80,60 @@ function NewOrderDialog(props)
         fetchData();
     }, [ isEnable ]);
 
+    /**
+     * add item to the cart
+     * @param rowData
+     */
     function addToCart(rowData)
     {
         let selectedQty = 0;
+
+        // check whether the item has qty
         if (qty.hasOwnProperty(rowData.id))
         {
             selectedQty = Number(qty[rowData.id]);
         }
         else
         {
+            // display error message
+            toast.error('Please enter amount.', {
+                position        : "top-right",
+                autoClose       : 5000,
+                hideProgressBar : false,
+                closeOnClick    : true,
+                pauseOnHover    : true,
+                draggable       : true,
+                progress        : undefined,
+            });
+
             return;
         }
 
+        if (orderItems.length > 0)
+        {
+            if (orderItems[0].supplierID !== rowData.supplier)
+            {
+                toast.warn('Please select same supplier items for same order.', {
+                    position        : "top-right",
+                    autoClose       : 5000,
+                    hideProgressBar : false,
+                    closeOnClick    : true,
+                    pauseOnHover    : true,
+                    draggable       : true,
+                    progress        : true,
+                });
+
+                return;
+            }
+        }
+
+        // calculate amount
         const amount = selectedQty * Number(rowData.unitPrice);
 
         setNetAmount(netAmount + amount);
 
         const cartObj = {
+            id         : rowData.id,
             item       : rowData.name,
             supplier   : rowData.supplierName,
             supplierID : rowData.supplier,
@@ -95,6 +146,78 @@ function NewOrderDialog(props)
             ...orderItems,
             cartObj,
         ]);
+    }
+
+    /**
+     * remove selected item to the cart
+     * @param itemID
+     */
+    function handleOnItemRemove(itemID)
+    {
+        // filter the item
+        const removedItem = orderItems.filter((i) => i.id !== itemID);
+
+        // check whether the item is exists
+        if (removedItem.length > 0)
+        {
+            // reduce the net amount
+            setNetAmount(netAmount - Number(removedItem[0].amount));
+        }
+        // remove item from the cart
+        const obj = orderItems.filter((i) => i.id !== itemID);
+
+        setOrderItems(obj);
+    }
+
+    /**
+     *  validate order and save to the DB
+     */
+    function handleOnPlaceOrder()
+    {
+        if (address.length === 0) return;
+
+        if (orderItems.length === 0)
+        {
+            toast.warn('Please select at least 1 item to place order', {
+                position        : "top-right",
+                autoClose       : 5000,
+                hideProgressBar : false,
+                closeOnClick    : true,
+                pauseOnHover    : true,
+                draggable       : true,
+                progress        : true,
+            });
+
+            return;
+        }
+
+        if (address.length === 0)
+        {
+            toast.warn('Please select date', {
+                position        : "top-right",
+                autoClose       : 5000,
+                hideProgressBar : false,
+                closeOnClick    : true,
+                pauseOnHover    : true,
+                draggable       : true,
+                progress        : true,
+            });
+
+            return;
+        }
+
+        const minAmount = configurations.filter((f) => f.id === 'minAmount')[0].amount;
+
+        const orderObj = {
+            address,
+            amount      : netAmount,
+            dueDate,
+            status      : minAmount > netAmount ? 1 : 2,
+            supplier    : orderItems[0].supplierID,
+            referenceID : orderID,
+        };
+
+        props.addNewOrder(orderObj, {});
     }
 
     return (
@@ -180,10 +303,9 @@ function NewOrderDialog(props)
                                     placeholder='enter deliver address'
                                     type='text'
                                     variant='outlined'
-                                    // value={item.price}
-                                    // onChange={(e) => handleOnTextChange(e)}
-                                    // error={supplier.errorEmail.length !== 0}
-                                    // helperText={supplier.errorEmail}
+                                    value={address}
+                                    onChange={(e) => setAddress(e.target.value)}
+                                    error={address.length === 0}
                                     fullWidth
                                 />
                             </div>
@@ -198,8 +320,8 @@ function NewOrderDialog(props)
                                         margin='normal'
                                         id='date-picker-inline'
                                         label='Select Deliver Date'
-                                        value={Date.now()}
-                                        // onChange={handleDateChange}
+                                        value={dueDate}
+                                        onChange={(e) => setDueDate(e)}
                                         KeyboardButtonProps={{
                                             'aria-label' : 'change date',
                                         }}
@@ -221,7 +343,7 @@ function NewOrderDialog(props)
                                     (rowData) => ({
                                         icon    : 'remove',
                                         tooltip : 'Click here to remove item',
-                                        onClick : (event, Data) => addToCart(Data),
+                                        onClick : (event, Data) => handleOnItemRemove(Data.id),
                                     }),
                                 ]}
                                 options={{
@@ -247,21 +369,23 @@ function NewOrderDialog(props)
                     </Button>
                     <Button
                         color='green'
-                        // onClick={() => handleSaving()}
+                        onClick={() => handleOnPlaceOrder()}
                     >
                         Place Order
                     </Button>
                 </DialogActions>
+                <ToastContainer />
             </Dialog>
         </div>
     );
 }
 
 const mapStateToProps = (state) => ({
-    itemList : state.items,
-    supplier : state.supplier.suppliers,
-    isEnable : state.system.newOrderDialog,
-    editID   : state.system.orderEditableID,
+    itemList       : state.items,
+    supplier       : state.supplier.suppliers,
+    isEnable       : state.system.newOrderDialog,
+    editID         : state.system.orderEditableID,
+    configurations : state.configurations.configurations,
 });
 
 export default connect(
@@ -270,5 +394,7 @@ export default connect(
         handleNewOrderDialogStatus,
         fetchItems,
         fetchSuppliers,
+        syncConfigurations,
+        addNewOrder,
     },
 )(NewOrderDialog);

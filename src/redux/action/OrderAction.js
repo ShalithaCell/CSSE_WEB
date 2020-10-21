@@ -1,4 +1,6 @@
+import { app } from "firebase";
 import { DIALOG_NEW_ORDER, VIEW_ORDER_TYPE } from "../actionTypes";
+import { DATABASE_COLLECTION_CONFIGURATIONS, DATABASE_COLLECTION_ORDERS } from "../../config";
 
 /**
  * handle the add new order dialog visibility with connecting to the redux store
@@ -25,4 +27,15 @@ export const handleViewOrderType = (action) => (dispatch) =>
         type    : VIEW_ORDER_TYPE,
         payload : action,
     });
+};
+
+export const addNewOrder = (orderObj, itemObj) => async (dispatch) =>
+{
+    await app().firestore()
+        .collection(DATABASE_COLLECTION_ORDERS)
+        .add({ ...orderObj })
+        .then((order) =>
+        {
+            console.log(order.id);
+        });
 };
