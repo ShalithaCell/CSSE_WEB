@@ -67,6 +67,21 @@ function NewItemDialog(props)
     }, [ props.supplier ]);
 
     /**
+     * set to initial state
+     */
+    function backToInitialState()
+    {
+        setItem({
+            name      : '',
+            qty       : '',
+            price     : '',
+            errorName : '',
+            errorQty  : '',
+            docID     : null,
+        });
+    }
+
+    /**
      * Generate supplier list as label value object array
      */
     function generateSupplierList()
@@ -130,6 +145,8 @@ function NewItemDialog(props)
         props.handleItemAddDialogStatus(false, null);
         // refresh the items
         props.fetchItems();
+
+        backToInitialState();
     }
 
     return (
