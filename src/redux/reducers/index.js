@@ -4,6 +4,7 @@ import systemReducer from "./systemReducer";
 import supplierReducer from "./supplierReducer";
 import itemReducer from "./itemReducer";
 import configurationReducer from "./configurationReducer";
+import orderReducer from "./orderReducer";
 
 /**
  * all the reducers are combine together and export
@@ -25,6 +26,7 @@ const reducers = combineReducers(
         supplier       : supplierReducer,
         items          : itemReducer,
         configurations : configurationReducer,
+        orders         : orderReducer,
     },
 );
 

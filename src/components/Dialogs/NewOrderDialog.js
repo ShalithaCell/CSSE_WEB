@@ -80,6 +80,24 @@ function NewOrderDialog(props)
         fetchData();
     }, [ isEnable ]);
 
+    function backToInitialState()
+    {
+        setItem({
+            name      : '',
+            qty       : '',
+            price     : '',
+            errorName : '',
+            errorQty  : '',
+            docID     : null,
+        });
+
+        setOrderID(null);
+        setNetAmount(0);
+        setOrderItems([]);
+        setQty([]);
+        setAddress('');
+    }
+
     /**
      * add item to the cart
      * @param rowData
@@ -210,14 +228,25 @@ function NewOrderDialog(props)
 
         const orderObj = {
             address,
-            amount      : netAmount,
+            amount       : netAmount,
             dueDate,
-            status      : minAmount > netAmount ? 1 : 2,
-            supplier    : orderItems[0].supplierID,
-            referenceID : orderID,
+            status       : minAmount > netAmount ? 1 : 2,
+            supplier     : orderItems[0].supplierID,
+            referenceID  : orderID,
+            supplierName : orderItems[0].supplier,
         };
 
-        props.addNewOrder(orderObj, {});
+        props.addNewOrder(orderObj, orderItems);
+
+        backToInitialState();
+        props.handleNewOrderDialogStatus(false, null);
+    }
+
+    function handleBack()
+    {
+        backToInitialState();
+
+        props.handleNewOrderDialogStatus(false, null);
     }
 
     return (
@@ -363,7 +392,7 @@ function NewOrderDialog(props)
                 <DialogActions>
                     <Button
                         appearance='ghost'
-                        onClick={() => props.handleNewOrderDialogStatus(false, null)}
+                        onClick={() => handleBack()}
                     >
                         Cancel
                     </Button>
