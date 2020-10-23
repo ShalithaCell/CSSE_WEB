@@ -5,10 +5,16 @@ import MaterialTable from "material-table";
 import { Badge } from "reactstrap";
 import Moment from 'react-moment';
 import { Button, ButtonToolbar } from "rsuite";
+import { handleViewOrderDialogStatus } from "../../redux/action/OrderAction";
 
 function PendingOrders(props)
 {
     const { orders } = props;
+
+    function handleViewOrder(rowData)
+    {
+        props.handleViewOrderDialogStatus(true, rowData);
+    }
 
     return (
         <div>
@@ -43,9 +49,13 @@ function PendingOrders(props)
                         // eslint-disable-next-line react/display-name
                         render : (rowData) => (
                             <ButtonToolbar>
-                                <Button appearance='ghost'>View</Button>
-                                <Button color='green'>Approve</Button>
-                                <Button color='red'>Cancel</Button>
+                                <Button
+                                    appearance='ghost'
+                                    onClick={() => handleViewOrder(rowData)}
+                                >
+                                    Approve
+                                </Button>
+                                <Button color='red'>Discard</Button>
                             </ButtonToolbar>
                         ),
                     },
@@ -71,5 +81,7 @@ const mapStateToProps = (state) => ({
 
 export default connect(
     mapStateToProps,
-    null,
+    {
+        handleViewOrderDialogStatus,
+    },
 )(PendingOrders);

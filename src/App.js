@@ -11,6 +11,8 @@ import 'rsuite/dist/styles/rsuite-default.css';
 import NewSupplierDialog from "./components/Dialogs/NewSupplierDialog";
 import NewItemDialog from "./components/Dialogs/NewItemDialog";
 import NewOrderDialog from "./components/Dialogs/NewOrderDialog";
+import ViewOrderDialog from "./components/Dialogs/ViewOrderDialog";
+import PaymentDialog from "./components/Dialogs/PaymentDialog";
 
 /**
  * Application main entry point and the handling point
@@ -42,6 +44,8 @@ class App extends Component
                 <NewSupplierDialog />
                 <NewItemDialog />
                 <NewOrderDialog />
+                <ViewOrderDialog />
+                <PaymentDialog />
             </BrowserRouter>
         );
     }
