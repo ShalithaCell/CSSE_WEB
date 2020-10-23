@@ -60,8 +60,6 @@ function CompleteOrders(props)
                         render : (rowData) => (
                             <ButtonToolbar>
                                 <Button appearance='ghost'>View</Button>
-                                <Button color='green'>Approve</Button>
-                                <Button color='red'>Cancel</Button>
                             </ButtonToolbar>
                         ),
                     },

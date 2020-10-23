@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-handler-names,jsx-a11y/control-has-associated-label,max-len,no-nested-ternary */
+/* eslint-disable react/jsx-handler-names,jsx-a11y/control-has-associated-label,max-len,no-nested-ternary,react/destructuring-assignment */
 import React from "react";
 
 // reactstrap components
@@ -12,10 +12,12 @@ import {
 import { Button, ButtonToolbar } from 'rsuite';
 import { connect } from "react-redux";
 import Header from "../../components/Headers/Header";
-import { fetchOrders } from "../../redux/action/OrderAction";
+import { fetchOrders, fetchOrderItems } from "../../redux/action/OrderAction";
 import PendingOrders from "../elements/PendingOrders";
 import ApprovedOrders from "../elements/ApprovedOrders";
 import CompleteOrders from "../elements/CompleteOrders";
+import { fetchSuppliers } from "../../redux/action/SupplierAction";
+import { fetchItems } from "../../redux/action/ItemAction";
 
 /**
  * Orders handling component of te application
@@ -28,10 +30,12 @@ class Orders extends React.Component
         this.state = {};
     }
 
-    componentDidMount()
+    async componentDidMount()
     {
-        // eslint-disable-next-line react/destructuring-assignment
+        await this.props.fetchItems();
         this.props.fetchOrders();
+        this.props.fetchOrderItems();
+        this.props.fetchSuppliers();
     }
 
     render()
@@ -70,4 +74,9 @@ const mapStateToProps = (state) => ({
     viewType : state.system.viewOrdersType,
 });
 
-export default connect(mapStateToProps, { fetchOrders })(Orders);
+export default connect(mapStateToProps,
+    { fetchOrders,
+        fetchOrderItems,
+        fetchSuppliers,
+        fetchItems,
+    })(Orders);

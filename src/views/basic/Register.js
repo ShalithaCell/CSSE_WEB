@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-handler-names */
+/* eslint-disable react/jsx-handler-names,react/destructuring-assignment */
 import React from "react";
 
 // reactstrap components
@@ -16,6 +16,11 @@ import {
     Row,
     Col,
 } from "reactstrap";
+import { ToastContainer, toast } from 'react-toastify';
+import Dialog from "@material-ui/core/Dialog";
+import githubImg from '../../assets/img/icons/common/github.svg';
+import googleImg from '../../assets/img/icons/common/google.svg';
+import { createUser } from "../../redux/action/UserAction";
 
 /**
  * user registration component of the application
@@ -25,11 +30,92 @@ class Register extends React.Component
     constructor()
     {
         super();
-        this.state = {};
+        this.state = {
+            email     : '',
+            password  : '',
+            password2 : '',
+        };
     }
 
     render()
     {
+        const { history } = this.props;
+
+        const handleOnTextChange = (e) =>
+        {
+            this.setState({
+                [e.target.id] : e.target.value,
+            });
+        };
+
+        const handleSubmit = async () =>
+        {
+            if (
+                this.state.email.length === 0
+                || this.state.password.length === 0
+                || this.state.password2.length === 0)
+            {
+                toast.error('all fields are required', {
+                    position        : "top-right",
+                    autoClose       : 5000,
+                    hideProgressBar : false,
+                    closeOnClick    : true,
+                    pauseOnHover    : true,
+                    draggable       : true,
+                    progress        : true,
+                });
+
+                return;
+            }
+
+            if (this.state.password !== this.state.password2)
+            {
+                toast.error('Password is not matched', {
+                    position        : "top-right",
+                    autoClose       : 5000,
+                    hideProgressBar : false,
+                    closeOnClick    : true,
+                    pauseOnHover    : true,
+                    draggable       : true,
+                    progress        : true,
+                });
+
+                return;
+            }
+
+            if (!(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(this.state.email)))
+            {
+                toast.error('Email is not in valid format', {
+                    position        : "top-right",
+                    autoClose       : 5000,
+                    hideProgressBar : false,
+                    closeOnClick    : true,
+                    pauseOnHover    : true,
+                    draggable       : true,
+                    progress        : true,
+                });
+
+                return;
+            }
+
+            const result = await createUser(this.state.email, this.state.password);
+
+            if (result !== null)
+            {
+                toast.success('User created. Please login', {
+                    position        : "top-right",
+                    autoClose       : 5000,
+                    hideProgressBar : false,
+                    closeOnClick    : true,
+                    pauseOnHover    : true,
+                    draggable       : true,
+                    progress        : true,
+                });
+
+                history.push('/auth/login');
+            }
+        };
+
         return (
             <>
                 <Col lg='6' md='8'>
@@ -48,7 +134,7 @@ class Register extends React.Component
                                     <span className='btn-inner--icon'>
                                         <img
                                             alt='...'
-                                            src={import("assets/img/icons/common/github.svg")}
+                                            src={githubImg}
                                         />
                                     </span>
                                     <span className='btn-inner--text'>Github</span>
@@ -62,7 +148,7 @@ class Register extends React.Component
                                     <span className='btn-inner--icon'>
                                         <img
                                             alt='...'
-                                            src={import("assets/img/icons/common/google.svg")}
+                                            src={googleImg}
                                         />
                                     </span>
                                     <span className='btn-inner--text'>Google</span>
@@ -78,20 +164,17 @@ class Register extends React.Component
                                     <InputGroup className='input-group-alternative mb-3'>
                                         <InputGroupAddon addonType='prepend'>
                                             <InputGroupText>
-                                                <i className='ni ni-hat-3' />
-                                            </InputGroupText>
-                                        </InputGroupAddon>
-                                        <Input placeholder='Name' type='text' />
-                                    </InputGroup>
-                                </FormGroup>
-                                <FormGroup>
-                                    <InputGroup className='input-group-alternative mb-3'>
-                                        <InputGroupAddon addonType='prepend'>
-                                            <InputGroupText>
                                                 <i className='ni ni-email-83' />
                                             </InputGroupText>
                                         </InputGroupAddon>
-                                        <Input placeholder='Email' type='email' autoComplete='new-email' />
+                                        <Input
+                                            id='email'
+                                            placeholder='Email'
+                                            type='email'
+                                            autoComplete='new-email'
+                                            value={this.state.email}
+                                            onChange={(e) => handleOnTextChange(e)}
+                                        />
                                     </InputGroup>
                                 </FormGroup>
                                 <FormGroup>
@@ -101,7 +184,31 @@ class Register extends React.Component
                                                 <i className='ni ni-lock-circle-open' />
                                             </InputGroupText>
                                         </InputGroupAddon>
-                                        <Input placeholder='Password' type='password' autoComplete='new-password' />
+                                        <Input
+                                            id='password'
+                                            placeholder='Password'
+                                            type='password'
+                                            autoComplete='new-password'
+                                            value={this.state.password}
+                                            onChange={(e) => handleOnTextChange(e)}
+                                        />
+                                    </InputGroup>
+                                </FormGroup>
+                                <FormGroup>
+                                    <InputGroup className='input-group-alternative'>
+                                        <InputGroupAddon addonType='prepend'>
+                                            <InputGroupText>
+                                                <i className='ni ni-lock-circle-open' />
+                                            </InputGroupText>
+                                        </InputGroupAddon>
+                                        <Input
+                                            id='password2'
+                                            placeholder='Re-enter password'
+                                            type='password'
+                                            autoComplete='new-password'
+                                            value={this.state.password2}
+                                            onChange={(e) => handleOnTextChange(e)}
+                                        />
                                     </InputGroup>
                                 </FormGroup>
                                 <div className='text-muted font-italic'>
@@ -135,7 +242,12 @@ class Register extends React.Component
                                     </Col>
                                 </Row>
                                 <div className='text-center'>
-                                    <Button className='mt-4' color='primary' type='button'>
+                                    <Button
+                                        className='mt-4'
+                                        color='primary'
+                                        type='button'
+                                        onClick={handleSubmit}
+                                    >
                                         Create account
                                     </Button>
                                 </div>
@@ -143,6 +255,7 @@ class Register extends React.Component
                         </CardBody>
                     </Card>
                 </Col>
+                <ToastContainer />
             </>
         );
     }
