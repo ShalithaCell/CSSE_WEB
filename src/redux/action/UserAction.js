@@ -7,6 +7,33 @@ import { decrypt, encrypt } from '../../services/EncryptionServices';
 import app from '../../base';
 
 /**
+ * create new user with email and password
+ * @param email
+ * @param password
+ * @returns {function(*): Promise<null>}
+ */
+export const createUser = (email, password) => async () =>
+{
+    let objUser = null;
+
+    await app().auth().createUserWithEmailAndPassword(email, password)
+        .then((user) =>
+        {
+            objUser = user;
+        })
+        .catch((error) =>
+        {
+            // Handle Errors here.
+            const errorCode = error.code;
+
+            const errorMessage = error.message;
+        // ...
+        });
+
+    return objUser;
+};
+
+/**
  * Application user authentication
  * @param email
  * @param password

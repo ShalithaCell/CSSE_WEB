@@ -5,7 +5,7 @@ import {
     SET_SESSION_EXPIRED,
     UPDATE_USER_NAME_LIST,
     DIALOG_NEW_SUPPLIER, DIALOG_NEW_ITEM, DIALOG_NEW_ORDER,
-    VIEW_ORDER_TYPE,
+    VIEW_ORDER_TYPE, DIALOG_VIEW_ORDER, VIEW_PAYMENT_DIALOG,
 } from '../actionTypes';
 
 const initialState = {
@@ -21,6 +21,10 @@ const initialState = {
     newOrderDialog      : false,
     orderEditableID     : null,
     viewOrdersType      : 1,
+    viewOrderDialog     : false,
+    viewOrderDetails    : null,
+    viewPaymentForm     : false,
+    paymentFormDetails  : null,
 };
 
 export default function(state = initialState, action)
@@ -70,10 +74,22 @@ export default function(state = initialState, action)
                 newOrderDialog  : action.payload.action,
                 orderEditableID : action.payload.editID,
             };
+        case DIALOG_VIEW_ORDER:
+            return {
+                ...state,
+                viewOrderDialog  : action.payload.action,
+                viewOrderDetails : action.payload.rowData,
+            };
         case VIEW_ORDER_TYPE:
             return {
                 ...state,
                 viewOrdersType : action.payload,
+            };
+        case VIEW_PAYMENT_DIALOG:
+            return {
+                ...state,
+                viewPaymentForm    : action.payload.action,
+                paymentFormDetails : action.payload.rowData,
             };
         default:
             return state;

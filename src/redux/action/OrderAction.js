@@ -1,5 +1,12 @@
 import { app } from "firebase";
-import { DIALOG_NEW_ORDER, ITEM_APPEND, ORDER_APPEND, VIEW_ORDER_TYPE } from "../actionTypes";
+import {
+    DIALOG_NEW_ORDER,
+    DIALOG_VIEW_ORDER,
+    ITEM_APPEND,
+    ORDER_APPEND,
+    ORDER_ITEMS_APPEND,
+    VIEW_ORDER_TYPE, VIEW_PAYMENT_DIALOG,
+} from "../actionTypes";
 import {
     DATABASE_COLLECTION_CONFIGURATIONS,
     DATABASE_COLLECTION_ORDER_ITEMS,
@@ -38,6 +45,37 @@ export const fetchOrders = () => async (dispatch) =>
 };
 
 /**
+ * fetch all order items
+ * @returns {function(*): Promise<void>}
+ */
+export const fetchOrderItems = () => async (dispatch) =>
+{
+    const objList = [];
+
+    app().firestore().collection(DATABASE_COLLECTION_ORDER_ITEMS).get()
+        .then((snapShot) =>
+        {
+            snapShot.forEach((doc) =>
+            {
+                if (doc.exists)
+                {
+                    // get the collection primary id
+                    const { id } = doc;
+                    // read the data
+                    const data = doc.data();
+
+                    objList.push({ ...data, id });
+                }
+            });
+
+            dispatch({
+                type    : ORDER_ITEMS_APPEND,
+                payload : objList,
+            });
+        });
+};
+
+/**
  * handle the add new order dialog visibility with connecting to the redux store
  * @param action
  * @param editID
@@ -48,6 +86,34 @@ export const handleNewOrderDialogStatus = (action, editID) => (dispatch) =>
     dispatch({
         type    : DIALOG_NEW_ORDER,
         payload : { action, editID },
+    });
+};
+
+/**
+ * handle the redux action to popup orders view dialog
+ * @param action
+ * @param rowData
+ * @returns {function(*): void}
+ */
+export const handleViewOrderDialogStatus = (action, rowData) => (dispatch) =>
+{
+    dispatch({
+        type    : DIALOG_VIEW_ORDER,
+        payload : { action, rowData },
+    });
+};
+
+/**
+ * Handle the payment dialog wit redux dispatch
+ * @param action
+ * @param rowData
+ * @returns {function(*): void}
+ */
+export const handleViewPaymentDialogStatus = (action, rowData) => (dispatch) =>
+{
+    dispatch({
+        type    : VIEW_PAYMENT_DIALOG,
+        payload : { action, rowData },
     });
 };
 
@@ -108,4 +174,17 @@ export const addNewOrder = (orderObj, itemObj) => async (dispatch) =>
 
             batch.commit();
         });
+};
+
+/**
+ * update the order status
+ * @param orderID
+ * @param statusNumber
+ * @returns {function(*): void}
+ */
+export const updateOrderStatus = (orderID, statusNumber) => async (dispatch) =>
+{
+    await app().firestore()
+        .collection(DATABASE_COLLECTION_ORDERS).doc(orderID)
+        .update({ status: statusNumber });
 };
