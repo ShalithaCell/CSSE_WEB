@@ -21,6 +21,7 @@ import Dialog from "@material-ui/core/Dialog";
 import githubImg from '../../assets/img/icons/common/github.svg';
 import googleImg from '../../assets/img/icons/common/google.svg';
 import { createUser } from "../../redux/action/UserAction";
+import IsValidEmail from "../../services/CommonServices";
 
 /**
  * user registration component of the application
@@ -83,7 +84,7 @@ class Register extends React.Component
                 return;
             }
 
-            if (!(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(this.state.email)))
+            if (!IsValidEmail(this.state.email))
             {
                 toast.error('Email is not in valid format', {
                     position        : "top-right",
