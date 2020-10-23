@@ -169,7 +169,7 @@ class Login extends React.Component
                                             </label>
                                         </div>
                                         <div className='text-center'>
-                                            <Button className='my-4' color='primary' type='submit'>
+                                            <Button className='my-4 login-btn' color='primary' type='submit'>
                                                 Sign in
                                             </Button>
                                             {isSubmitting
