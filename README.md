@@ -5,7 +5,7 @@ Web application for Procurement for Construction Industry. Through this system S
 
 # Purpose
 
-The purpose of this project generate a timetable for universities as well as collages to generate their advance logical timetables.
+The purpose of this project is handling the orders.
 
 ---
 
@@ -19,39 +19,26 @@ The purpose of this project generate a timetable for universities as well as col
 
 ### 2. Goto root folder and run the ```npm install``` to install the necessary packages.
 
-### 3. Init the databsase.
+### 3. Init the configurations.
 
-   * Goto src folder.
-   * open the terminal and run ```npx sequelize-cli db:migrate```
-   * copy the file ```schedule.sqlite3``` to outside database folder.
-
-
+   * Goto root folder .env file.
+   * Replace your firebase configs
 
 ### 4. Goto root folder and run the ```npm start``` to run the project.
 
- # Libraries
- 
-  * [jQuery](https://jquery.com/)
-  * [Bootstrap](https://getbootstrap.com/)
-  * [sequelize](https://sequelize.org/)
-  * [jQuery DataTables](https://datatables.net/)
-  * [jquery-confirm.js](https://craftpip.github.io/jquery-confirm/)
   
   # Screenshots
   
-  * <img width="500" alt="timetable" src="https://user-images.githubusercontent.com/43614338/97087819-80d89280-164a-11eb-8e90-6937239716c5.png">
+  * <img width="500" alt="timetable" src="https://user-images.githubusercontent.com/43614338/97088146-90f17180-164c-11eb-9955-f77250a24314.png">
   
-  * <img width="500" alt="timetable" src="https://user-images.githubusercontent.com/43614338/97087848-ac5b7d00-164a-11eb-8331-3b23038c5922.png">
+  * <img width="500" alt="timetable" src="https://user-images.githubusercontent.com/43614338/97088182-ce55ff00-164c-11eb-9377-91b6311e00ad.png">
   
-  * <img width="500" alt="timetable" src="https://user-images.githubusercontent.com/43614338/97087865-ca28e200-164a-11eb-8fa5-0d5934d9c42b.png">
+  * <img width="500" alt="timetable" src="https://user-images.githubusercontent.com/43614338/97088186-df067500-164c-11eb-8aa3-4df73861e1fa.png">
   
-  * <img width="500" alt="timetable" src="https://user-images.githubusercontent.com/43614338/97087875-df057580-164a-11eb-9dfb-3d2533b31e15.png">
+  * <img width="500" alt="timetable" src="https://user-images.githubusercontent.com/43614338/97088199-f34a7200-164c-11eb-98cf-e7eb4fb127d4.png">
   
-  * <img width="500" alt="timetable" src="https://user-images.githubusercontent.com/43614338/97087895-fd6b7100-164a-11eb-86c9-9435aedebeb0.png">
+  * <img width="500" alt="timetable" src="https://user-images.githubusercontent.com/43614338/97088213-0fe6aa00-164d-11eb-89b9-0ba6bd046834.png">
   
-  * <img width="500" alt="timetable" src="https://user-images.githubusercontent.com/43614338/97087914-12480480-164b-11eb-8ba0-3a24ec0ac902.png">
-  
-   * <img width="500" alt="timetable" src="https://user-images.githubusercontent.com/43614338/97087937-34418700-164b-11eb-9cdd-db7614cb26b6.png">
   
   
   # Contribute
