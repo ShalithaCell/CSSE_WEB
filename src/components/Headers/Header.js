@@ -4,7 +4,7 @@ import React from "react";
 // reactstrap components
 import { Card, CardBody, CardTitle, Container, Row, Col } from "reactstrap";
 import { connect } from "react-redux";
-import { handleNewOrderDialogStatus, handleViewOrderType } from "../../redux/action/OrderAction";
+import { handleNewOrderDialogStatus, handleViewOrderType, fetchOrders } from "../../redux/action/OrderAction";
 import ViewOrderEnum from "../../redux/actionTypes";
 
 class Header extends React.Component
@@ -15,8 +15,15 @@ class Header extends React.Component
         this.state = {};
     }
 
+    componentDidMount()
+    {
+        this.props.fetchOrders();
+    }
+
     render()
     {
+        const { orders } = this.props;
+
         return (
             <>
                 <div className='header bg-gradient-info pb-8 pt-5 pt-md-8'>
@@ -43,7 +50,7 @@ class Header extends React.Component
                                                         Pending Orders
                                                     </CardTitle>
                                                     <span className='h2 font-weight-bold mb-0'>
-                                                        10
+                                                        { orders.filter((i) => i.status === 1).length }
                                                     </span>
                                                 </div>
                                                 <Col className='col-auto'>
@@ -56,7 +63,7 @@ class Header extends React.Component
                                                 <span className='text-success mr-2'>
                                                     <i className='fa fa-arrow-up' />
                                                     {' '}
-                                                    Rs 850000
+                                                    { orders.filter((i) => i.status === 1).reduce((cnt, o) => cnt + o.amount, 0)}
                                                 </span>
                                                 {" "}
                                                 <span className='text-nowrap'>budget</span>
@@ -80,7 +87,7 @@ class Header extends React.Component
                                                         Approved Orders
                                                     </CardTitle>
                                                     <span className='h2 font-weight-bold mb-0'>
-                                                        5
+                                                        { orders.filter((i) => i.status === 2).length }
                                                     </span>
                                                 </div>
                                                 <Col className='col-auto'>
@@ -92,8 +99,8 @@ class Header extends React.Component
                                             <p className='mt-3 mb-0 text-muted text-sm'>
                                                 <span className='text-success mr-2'>
                                                     <i className='fas fa-arrow-up' />
-                                                    {' '}
-                                                    600000
+                                                    {' Rs '}
+                                                    { orders.filter((i) => i.status === 2).reduce((cnt, o) => cnt + o.amount, 0)}
                                                 </span>
                                                 {" "}
                                                 <span className='text-nowrap'>budget</span>
@@ -116,7 +123,9 @@ class Header extends React.Component
                                                     >
                                                         Complete Orders
                                                     </CardTitle>
-                                                    <span className='h2 font-weight-bold mb-0'>15</span>
+                                                    <span className='h2 font-weight-bold mb-0'>
+                                                        { orders.filter((i) => i.status === 3).length }
+                                                    </span>
                                                 </div>
                                                 <Col className='col-auto'>
                                                     <div className='icon icon-shape bg-yellow text-white rounded-circle shadow'>
@@ -128,7 +137,7 @@ class Header extends React.Component
                                                 <span className='text-success mr-2'>
                                                     <i className='fas fa-arrow-up' />
                                                     {' '}
-                                                    1100000
+                                                    { orders.filter((i) => i.status === 3).reduce((cnt, o) => cnt + o.amount, 0)}
                                                 </span>
                                                 {" "}
                                                 <span className='text-nowrap'>budget</span>
@@ -184,6 +193,12 @@ class Header extends React.Component
 
 const mapStateToProps = (state) => ({
     viewType : state.system.viewOrdersType,
+    orders   : state.orders.orderHeader,
 });
 
-export default connect(null, { handleNewOrderDialogStatus, handleViewOrderType })(Header);
+export default connect(mapStateToProps,
+    {
+        handleNewOrderDialogStatus,
+        handleViewOrderType,
+        fetchOrders,
+    })(Header);

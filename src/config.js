@@ -19,3 +19,4 @@ export const DATABASE_COLLECTION_ITEMS = 'items';
 export const DATABASE_COLLECTION_CONFIGURATIONS = 'configurations';
 export const DATABASE_COLLECTION_ORDERS = 'orders';
 export const DATABASE_COLLECTION_ORDER_ITEMS = 'orderItems';
+export const DATABASE_COLLECTION_ERROR_LOG = 'errorLog';

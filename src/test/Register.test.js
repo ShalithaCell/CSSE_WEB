@@ -33,32 +33,64 @@ describe('Test case for testing register', () =>
         );
     });
 
-    const inputCredentials = () =>
-    {
-        // input email
-        wrapper.find('input[type="email"]').simulate('change', {
-            target : {
-                value : 'testEmail@gmail.com',
-            },
-        });
-
-        // input password
-        wrapper.find('input[type="password"]').first().simulate('change', {
-            target : {
-                value : 'Shalitha1234',
-            },
-        });
-    };
-
     // test case for login field validation
     it('check input data', () =>
     {
-        inputCredentials();
+        const componentInstance = wrapper.find('Register').instance();
 
+        componentInstance.handleOnTextChange({ target: { id: 'email', value: 'testEmail@gmail.com' } });
+        componentInstance.handleOnTextChange({ target: { id: 'password', value: 'Test@Password' } });
+        componentInstance.handleOnTextChange({ target: { id: 'password2', value: 'Test@Password' } });
+
+        // wait for 2 seconds for redux store update
         jest.useFakeTimers();
         setTimeout(() =>
         {
-            expect(wrapper.instance().state('email')).toEqual('testEmail@gmail.com');
+            wrapper.update();
+
+            expect(componentInstance.state.email).toEqual('testEmail@gmail.com');
+            expect(componentInstance.state.password).toEqual('Test@Password');
+            expect(componentInstance.state.password2).toEqual('Test@Password');
+        }, 2000);
+        jest.runAllTimers();
+    });
+
+    // test case for login field validation
+    it('validate password', () =>
+    {
+        const componentInstance = wrapper.find('Register').instance();
+
+        componentInstance.handleOnTextChange({ target: { id: 'password', value: 'Test@PasswordForUser' } });
+        componentInstance.handleOnTextChange({ target: { id: 'password2', value: 'Test@PasswordForUser' } });
+
+        // wait for 2 seconds for redux store update
+        jest.useFakeTimers();
+        setTimeout(() =>
+        {
+            wrapper.update();
+
+            expect(componentInstance.state.password)
+                .toEqual(componentInstance.state.password2);
+        }, 2000);
+        jest.runAllTimers();
+    });
+
+    // check password invalidate
+    it('validate password', () =>
+    {
+        const componentInstance = wrapper.find('Register').instance();
+
+        componentInstance.handleOnTextChange({ target: { id: 'password', value: 'Test@Password' } });
+        componentInstance.handleOnTextChange({ target: { id: 'password2', value: 'Test@PasswordForUser' } });
+
+        // wait for 2 seconds for redux store update
+        jest.useFakeTimers();
+        setTimeout(() =>
+        {
+            wrapper.update();
+
+            expect(componentInstance.state.password)
+                .toEqual(componentInstance.state.password2);
         }, 2000);
         jest.runAllTimers();
     });
