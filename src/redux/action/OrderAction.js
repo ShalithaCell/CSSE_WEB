@@ -12,6 +12,7 @@ import {
     DATABASE_COLLECTION_ORDER_ITEMS,
     DATABASE_COLLECTION_ORDERS,
 } from "../../config";
+import reportError from "./ErrorLogAction";
 
 /**
  * fetch all orders
@@ -41,6 +42,10 @@ export const fetchOrders = () => async (dispatch) =>
                 type    : ORDER_APPEND,
                 payload : objList,
             });
+        })
+        .catch((err) =>
+        {
+            reportError(err);
         });
 };
 
@@ -72,6 +77,10 @@ export const fetchOrderItems = () => async (dispatch) =>
                 type    : ORDER_ITEMS_APPEND,
                 payload : objList,
             });
+        })
+        .catch((err) =>
+        {
+            reportError(err);
         });
 };
 

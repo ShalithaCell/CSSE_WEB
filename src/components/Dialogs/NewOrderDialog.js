@@ -15,7 +15,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import {
     fetchItems,
 } from "../../redux/action/ItemAction";
-import { handleNewOrderDialogStatus, addNewOrder } from "../../redux/action/OrderAction";
+import { handleNewOrderDialogStatus, addNewOrder, fetchOrders } from "../../redux/action/OrderAction";
 import { fetchSuppliers } from "../../redux/action/SupplierAction";
 import syncConfigurations from "../../redux/action/ConfigurationActions";
 import 'date-fns';
@@ -224,21 +224,24 @@ function NewOrderDialog(props)
             return;
         }
 
+        // calculate the min amount
         const minAmount = configurations.filter((f) => f.id === 'minAmount')[0].amount;
 
         const orderObj = {
             address,
             amount       : netAmount,
             dueDate,
-            status       : minAmount > netAmount ? 1 : 2,
+            status       : minAmount < netAmount ? 1 : 2,
             supplier     : orderItems[0].supplierID,
             referenceID  : orderID,
             supplierName : orderItems[0].supplier,
         };
 
+        // place th order
         props.addNewOrder(orderObj, orderItems);
 
         backToInitialState();
+        props.fetchOrders();
         props.handleNewOrderDialogStatus(false, null);
     }
 
@@ -425,5 +428,6 @@ export default connect(
         fetchSuppliers,
         syncConfigurations,
         addNewOrder,
+        fetchOrders,
     },
 )(NewOrderDialog);

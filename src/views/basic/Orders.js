@@ -72,6 +72,7 @@ class Orders extends React.Component
 
 const mapStateToProps = (state) => ({
     viewType : state.system.viewOrdersType,
+    orders   : state.orders,
 });
 
 export default connect(mapStateToProps,

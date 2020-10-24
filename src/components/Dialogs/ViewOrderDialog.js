@@ -12,7 +12,12 @@ import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/picker
 import MaterialTable from "material-table";
 import DateFnsUtils from '@date-io/date-fns';
 import { ToastContainer, toast } from 'react-toastify';
-import { handleViewOrderDialogStatus, handleViewPaymentDialogStatus } from "../../redux/action/OrderAction";
+import {
+    fetchOrders,
+    handleViewOrderDialogStatus,
+    handleViewPaymentDialogStatus,
+    updateOrderStatus,
+} from "../../redux/action/OrderAction";
 import 'date-fns';
 
 /**
@@ -40,6 +45,7 @@ function ViewOrderDialog(props)
     // due date
     const [ dueDate, setDueDate ] = useState(Date.now);
 
+    // back to previous
     function handleBack()
     {
         setOrderID(null);
@@ -97,6 +103,13 @@ function ViewOrderDialog(props)
 
         props.handleViewPaymentDialogStatus(true, paymentObj);
         handleBack();
+    }
+
+    function handleOnDiscard()
+    {
+        props.updateOrderStatus(orderItems[0].id, 0);
+        handleBack();
+        props.fetchOrders();
     }
 
     return (
@@ -230,7 +243,9 @@ const mapStateToProps = (state) => ({
 export default connect(
     mapStateToProps,
     {
+        fetchOrders,
         handleViewOrderDialogStatus,
         handleViewPaymentDialogStatus,
+        updateOrderStatus,
     },
 )(ViewOrderDialog);

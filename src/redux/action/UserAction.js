@@ -5,6 +5,7 @@ import {
 import { GetSession } from '../../services/SessionManagement';
 import { decrypt, encrypt } from '../../services/EncryptionServices';
 import app from '../../base';
+import reportError from "./ErrorLogAction";
 
 /**
  * create new user with email and password
@@ -23,11 +24,7 @@ export const createUser = (email, password) => async () =>
         })
         .catch((error) =>
         {
-            // Handle Errors here.
-            const errorCode = error.code;
-
-            const errorMessage = error.message;
-        // ...
+            reportError(error);
         });
 
     return objUser;
@@ -61,8 +58,7 @@ export const doLogin = (email, password) => async (dispatch) =>
         }
     }).catch((error) =>
     {
-        console.log(error.code);
-        console.log(error.message);
+        reportError(error);
     });
 
     if (success)

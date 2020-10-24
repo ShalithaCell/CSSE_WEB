@@ -1,6 +1,7 @@
 import { app } from "firebase";
 import { DATABASE_COLLECTION_SUPPLIER } from "../../config";
 import { SUPPLIER_REMOVE_ALL, SUPPLIER_APPEND, DIALOG_NEW_SUPPLIER } from "../actionTypes";
+import reportError from "./ErrorLogAction";
 
 /**
  * Fetch the all suppliers from the database
@@ -33,6 +34,10 @@ export const fetchSuppliers = () => async (dispatch) =>
                     }
                 }
             });
+        })
+        .catch((err) =>
+        {
+            reportError(err);
         });
 };
 
@@ -59,7 +64,11 @@ export const addNewSupplier = (supplierObj) => async (dispatch) =>
 {
     await app().firestore()
         .collection(DATABASE_COLLECTION_SUPPLIER)
-        .add({ ...supplierObj });
+        .add({ ...supplierObj })
+        .catch((err) =>
+        {
+            reportError(err);
+        });
 };
 
 /**
@@ -73,7 +82,11 @@ export const updateSupplier = (supplierObj, id) => async (dispatch) =>
     await app().firestore()
         .collection(DATABASE_COLLECTION_SUPPLIER)
         .doc(id)
-        .update({ ...supplierObj });
+        .update({ ...supplierObj })
+        .catch((err) =>
+        {
+            reportError(err);
+        });
 };
 
 /**
@@ -86,5 +99,9 @@ export const removeSupplier = (id) => async (dispatch) =>
     await app().firestore()
         .collection(DATABASE_COLLECTION_SUPPLIER)
         .doc(id)
-        .delete();
+        .delete()
+        .catch((err) =>
+        {
+            reportError(err);
+        });
 };
