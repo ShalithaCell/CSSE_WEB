@@ -23,7 +23,7 @@ The purpose of this project generate a timetable for universities as well as col
 
    * Goto src folder.
    * open the terminal and run ```npx sequelize-cli db:migrate```
-   * copy the file ```schedule.sqlite3```` to outside database folder.
+   * copy the file ```schedule.sqlite3``` to outside database folder.
 
 
 
