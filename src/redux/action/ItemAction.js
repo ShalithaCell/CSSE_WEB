@@ -2,6 +2,7 @@ import { app } from "firebase";
 import { DATABASE_COLLECTION_ITEMS } from "../../config";
 import { DIALOG_NEW_ITEM, ITEM_APPEND } from "../actionTypes";
 import store from "../store";
+import reportError from "./ErrorLogAction";
 
 /**
  * get the all items form the database and saved to the redux store
@@ -73,5 +74,9 @@ export const addNewItem = (itemObj) => async (dispatch) =>
 {
     await app().firestore()
         .collection(DATABASE_COLLECTION_ITEMS)
-        .add({ ...itemObj });
+        .add({ ...itemObj })
+        .catch((err) =>
+        {
+            reportError(err);
+        });
 };

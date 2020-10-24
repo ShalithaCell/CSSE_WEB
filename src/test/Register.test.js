@@ -2,11 +2,9 @@ import React from 'react';
 import { shallow, configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { Provider } from 'react-redux';
-import { act } from 'react-dom/test-utils';
 import configEnzyme from "../setupTest";
 import store from "../redux/store";
 import Register from "../views/basic/Register";
-import { GetSession } from "../services/SessionManagement";
 
 describe('Test case for testing register', () =>
 {
