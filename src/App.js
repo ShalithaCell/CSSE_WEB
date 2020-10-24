@@ -13,6 +13,7 @@ import NewItemDialog from "./components/Dialogs/NewItemDialog";
 import NewOrderDialog from "./components/Dialogs/NewOrderDialog";
 import ViewOrderDialog from "./components/Dialogs/ViewOrderDialog";
 import PaymentDialog from "./components/Dialogs/PaymentDialog";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 /**
  * Application main entry point and the handling point
@@ -29,23 +30,25 @@ class App extends Component
     {
         return (
             <BrowserRouter>
-                {/* eslint-disable-next-line react/destructuring-assignment */}
-                {IsAuthenticated(this.props.setUserState)
-                    ? <Switch>
-                        <Route path='/admin' component={Admin} />
-                        <Route path='/auth' component={Auth} />
-                        <Redirect from='/' to='/admin/index' />
-                        {/* eslint-disable-next-line indent,react/jsx-closing-tag-location */}
-                    </Switch>
-                    : <Switch>
-                        <Route path='/' component={Auth} />
-                        {/* eslint-disable-next-line indent,react/jsx-closing-tag-location */}
-                    </Switch>}
-                <NewSupplierDialog />
-                <NewItemDialog />
-                <NewOrderDialog />
-                <ViewOrderDialog />
-                <PaymentDialog />
+                <ErrorBoundary>
+                    {/* eslint-disable-next-line react/destructuring-assignment */}
+                    {IsAuthenticated(this.props.setUserState)
+                        ? <Switch>
+                            <Route path='/admin' component={Admin} />
+                            <Route path='/auth' component={Auth} />
+                            <Redirect from='/' to='/admin/index' />
+                            {/* eslint-disable-next-line indent,react/jsx-closing-tag-location */}
+                        </Switch>
+                        : <Switch>
+                            <Route path='/' component={Auth} />
+                            {/* eslint-disable-next-line indent,react/jsx-closing-tag-location */}
+                        </Switch>}
+                    <NewSupplierDialog />
+                    <NewItemDialog />
+                    <NewOrderDialog />
+                    <ViewOrderDialog />
+                    <PaymentDialog />
+                </ErrorBoundary>
             </BrowserRouter>
         );
     }

@@ -1,6 +1,7 @@
 import { app } from "firebase";
 import { DATABASE_COLLECTION_CONFIGURATIONS } from "../../config";
 import { SET_CONFIGURATIONS } from "../actionTypes";
+import reportError from "./ErrorLogAction";
 
 const syncConfigurations = () => async (dispatch) =>
 {
@@ -26,6 +27,10 @@ const syncConfigurations = () => async (dispatch) =>
                     payload : configurationObject,
                 });
             });
+        })
+        .catch((err) =>
+        {
+            reportError(err);
         });
 };
 

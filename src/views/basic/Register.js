@@ -21,6 +21,7 @@ import Dialog from "@material-ui/core/Dialog";
 import githubImg from '../../assets/img/icons/common/github.svg';
 import googleImg from '../../assets/img/icons/common/google.svg';
 import { createUser } from "../../redux/action/UserAction";
+import IsValidEmail from "../../services/CommonServices";
 
 /**
  * user registration component of the application
@@ -37,16 +38,16 @@ class Register extends React.Component
         };
     }
 
+    handleOnTextChange = (e) =>
+    {
+        this.setState({
+            [e.target.id] : e.target.value,
+        });
+    };
+
     render()
     {
         const { history } = this.props;
-
-        const handleOnTextChange = (e) =>
-        {
-            this.setState({
-                [e.target.id] : e.target.value,
-            });
-        };
 
         const handleSubmit = async () =>
         {
@@ -83,7 +84,7 @@ class Register extends React.Component
                 return;
             }
 
-            if (!(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(this.state.email)))
+            if (!IsValidEmail(this.state.email))
             {
                 toast.error('Email is not in valid format', {
                     position        : "top-right",
@@ -171,9 +172,10 @@ class Register extends React.Component
                                             id='email'
                                             placeholder='Email'
                                             type='email'
+                                            className='email-c'
                                             autoComplete='new-email'
                                             value={this.state.email}
-                                            onChange={(e) => handleOnTextChange(e)}
+                                            onChange={(e) => this.handleOnTextChange(e)}
                                         />
                                     </InputGroup>
                                 </FormGroup>
@@ -190,7 +192,7 @@ class Register extends React.Component
                                             type='password'
                                             autoComplete='new-password'
                                             value={this.state.password}
-                                            onChange={(e) => handleOnTextChange(e)}
+                                            onChange={(e) => this.handleOnTextChange(e)}
                                         />
                                     </InputGroup>
                                 </FormGroup>
@@ -207,7 +209,7 @@ class Register extends React.Component
                                             type='password'
                                             autoComplete='new-password'
                                             value={this.state.password2}
-                                            onChange={(e) => handleOnTextChange(e)}
+                                            onChange={(e) => this.handleOnTextChange(e)}
                                         />
                                     </InputGroup>
                                 </FormGroup>

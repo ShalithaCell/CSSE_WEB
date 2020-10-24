@@ -19,23 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e673d3c-e34d-4d15-aa18-c71353398034" name="Default Changelist" comment="fix order details">
-      <change afterPath="$PROJECT_DIR$/src/components/Dialogs/PaymentDialog.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Dialogs/ViewOrderDialog.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/elements/AddressForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/elements/PaymentForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/elements/Review.js" afterDir="false" />
+    <list default="true" id="9e673d3c-e34d-4d15-aa18-c71353398034" name="Default Changelist" comment="implement error boundary">
+      <change afterPath="$PROJECT_DIR$/src/test/Orders.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action/ConfigurationActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/ConfigurationActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action/ItemAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/ItemAction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/action/OrderAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/OrderAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action/SupplierAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/SupplierAction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/action/UserAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/UserAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/orderReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/orderReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/systemReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/systemReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/Register.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Register.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/basic/Orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/basic/Orders.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/basic/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/basic/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/elements/CompleteOrders.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/elements/CompleteOrders.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/elements/PendingOrders.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/elements/PendingOrders.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +47,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/feat_orderCrud" />
+        <entry key="$PROJECT_DIR$" value="feature/feat_improvements" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -140,7 +134,8 @@
       <workItem from="1603199617458" duration="7166000" />
       <workItem from="1603274469128" duration="12590000" />
       <workItem from="1603338131117" duration="20497000" />
-      <workItem from="1603425596071" duration="19537000" />
+      <workItem from="1603425596071" duration="35770000" />
+      <workItem from="1603519238097" duration="14106000" />
     </task>
     <task id="LOCAL-00001" summary="add git ignore">
       <created>1602651816258</created>
@@ -303,7 +298,35 @@
       <option name="project" value="LOCAL" />
       <updated>1603391601966</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="fix some isssues">
+      <created>1603458927338</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1603458927338</updated>
+    </task>
+    <task id="LOCAL-00025" summary="basic test cases">
+      <created>1603467244316</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1603467244316</updated>
+    </task>
+    <task id="LOCAL-00026" summary="basic test cases">
+      <created>1603479915365</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1603479915365</updated>
+    </task>
+    <task id="LOCAL-00027" summary="implement error boundary">
+      <created>1603535245982</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1603535245982</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,13 +364,16 @@
     <MESSAGE value="for switch" />
     <MESSAGE value="refactor" />
     <MESSAGE value="fix order details" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix order details" />
+    <MESSAGE value="fix some isssues" />
+    <MESSAGE value="basic test cases" />
+    <MESSAGE value="implement error boundary" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement error boundary" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="828" y="412" key="#ESLint" timestamp="1603443506253">
+    <state x="828" y="412" key="#ESLint" timestamp="1603533624563">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="828" y="412" key="#ESLint/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603443506253" />
+    <state x="828" y="412" key="#ESLint/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603533624563" />
     <state x="586" y="198" key="#Inspections" timestamp="1602820447740">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -369,44 +395,92 @@
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602995310767" />
     <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602744680108" />
-    <state width="1899" height="163" key="GridCell.Tab.0.bottom" timestamp="1603455688654">
+    <state width="1899" height="163" key="GridCell.Tab.0.bottom" timestamp="1603539095144">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="163" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603042138116" />
-    <state width="1899" height="163" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603455688654" />
-    <state width="1899" height="163" key="GridCell.Tab.0.center" timestamp="1603455688654">
+    <state width="1899" height="163" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603539095144" />
+    <state width="1899" height="163" key="GridCell.Tab.0.center" timestamp="1603539095144">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="163" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603042138116" />
-    <state width="1899" height="163" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603455688654" />
-    <state width="1899" height="163" key="GridCell.Tab.0.left" timestamp="1603455688653">
+    <state width="1899" height="163" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603539095144" />
+    <state width="1899" height="163" key="GridCell.Tab.0.left" timestamp="1603539095143">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="163" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603042138116" />
-    <state width="1899" height="163" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603455688653" />
-    <state width="1899" height="163" key="GridCell.Tab.0.right" timestamp="1603455688654">
+    <state width="1899" height="163" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603539095143" />
+    <state width="1899" height="163" key="GridCell.Tab.0.right" timestamp="1603539095144">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="163" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603042138116" />
-    <state width="1899" height="163" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603455688654" />
+    <state width="1899" height="163" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603539095144" />
+    <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1603479931656">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.1.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603479931656" />
+    <state width="1899" height="348" key="GridCell.Tab.1.center" timestamp="1603479931656">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.1.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603479931656" />
+    <state width="1899" height="348" key="GridCell.Tab.1.left" timestamp="1603479931656">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.1.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603479931656" />
+    <state width="1899" height="348" key="GridCell.Tab.1.right" timestamp="1603479931656">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.1.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603479931656" />
+    <state width="1899" height="348" key="GridCell.Tab.2.bottom" timestamp="1603479931657">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.2.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603479931657" />
+    <state width="1899" height="348" key="GridCell.Tab.2.center" timestamp="1603479931657">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.2.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603479931657" />
+    <state width="1899" height="348" key="GridCell.Tab.2.left" timestamp="1603479931657">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.2.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603479931657" />
+    <state width="1899" height="348" key="GridCell.Tab.2.right" timestamp="1603479931657">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.2.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603479931657" />
+    <state width="1899" height="348" key="GridCell.Tab.3.bottom" timestamp="1603479931657">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.3.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603479931657" />
+    <state width="1899" height="348" key="GridCell.Tab.3.center" timestamp="1603479931657">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.3.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603479931657" />
+    <state width="1899" height="348" key="GridCell.Tab.3.left" timestamp="1603479931657">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.3.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603479931657" />
+    <state width="1899" height="348" key="GridCell.Tab.3.right" timestamp="1603479931657">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="348" key="GridCell.Tab.3.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603479931657" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1602904609787">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602904609787" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1603391603292">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1603535248418">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603039439549" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603391603292" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603535248418" />
     <state x="563" y="131" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602751068691">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="563" y="131" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602751068691" />
-    <state x="667" y="253" width="585" height="558" key="find.popup" timestamp="1603035258631">
+    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1603462962264">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="667" y="253" width="585" height="558" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603035258631" />
-    <state x="667" y="253" width="585" height="534" key="find.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602848311627" />
+    <state x="667" y="253" width="585" height="534" key="find.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603462962264" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1603028574623">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
